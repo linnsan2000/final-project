@@ -46,12 +46,15 @@ app.get("/questions", (req, res) => {
     res.json(allQuestions)
   })
 })
-
+//
 app.get("/questions/:id", (req, res) => {
-  const id = parseInt(req.params.id)
-  const oneQuestion = allQuestions.Questions.find(item => item.id === id)
-    res.json(oneQuestion)
+  // const id = parseInt(req.params.id)
+  Questions.findOne({ _id: req.params.id }).then(question => {
+    res.json(question.question)
   })
+  // const oneQuestion = allQuestions.Questions.find(item => item.id === id)
+  //   res.json(oneQuestion)
+  // })
 })
 
 
