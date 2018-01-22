@@ -1,9 +1,31 @@
+import mongoose from "mongoose"
 import express from "express"
+import bodyParser from "body-parser"
+import cors from "cors"
 
+// Express setup, including JSON body parsing.
 const app = express()
+app.use(bodyParser.urlencoded({ extended: true }))
+app.use(bodyParser.json())
 
-app.get("/", (req, res) =>
-  res.send("Hello World!"))
+// Tells express to add the "Access-Control-Allow-Origin" header to allow requests from anywhere.
+app.use(cors())
 
-app.listen(8080, () =>
-  console.log("Example app listening on port 8080!"))
+// Connect to MongoDB, on the "products-api" database. If the db doesn't
+// exist, mongo will create it.
+mongoose.connect("mongodb://localhost/compass-api", { useMongoClient: true })
+
+// This makes mongo use ES6 promises, instead of its own implementation
+mongoose.Promise = Promise
+
+// Log when mongo connects, or encounters errors when trying to connect.
+mongoose.connection.on("error", err => console.error("Connection error:", err))
+mongoose.connection.once("open", () => console.log("Connected to mongodb"))
+
+//
+// Define a model here.
+//
+
+// Add more endpoints here!
+
+app.listen(8080, () => console.log("Compass API listening on port 8080!"))
