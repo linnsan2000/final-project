@@ -42,7 +42,7 @@ const Questions = mongoose.model("questions", {
 // Add more endpoints here!
 
 app.get("/questions", (req, res) => {
-  User.find().then(allQuestions => {
+  Questions.find().then(allQuestions => {
     res.json(allQuestions)
   })
 })
