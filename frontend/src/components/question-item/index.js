@@ -1,7 +1,7 @@
 import React from "react"
 import "index.css"
 
-export default class Questions extends React.Component {
+export default class QuestionItem extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
