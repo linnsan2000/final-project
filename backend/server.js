@@ -48,9 +48,10 @@ app.get("/questions", (req, res) => {
 })
 
 app.get("/questions/:id", (req, res) => {
-  const id = parseInt(req.params.id)
-  const oneQuestion = allQuestions.Questions.find(item => item.id === id)
-    res.json(oneQuestion)
+  const id = {_id: req.params.id}
+  console.log(id)
+  const oneQuestion = Questions.Questions.find(item => item.id === id)
+    res.send(oneQuestion)
   })
 })
 
