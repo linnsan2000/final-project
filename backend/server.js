@@ -24,8 +24,34 @@ mongoose.connection.once("open", () => console.log("Connected to mongodb"))
 
 //
 // Define a model here.
-//
+const User = mongoose.model("User", {
+  name: {
+    type: String,
+    unique: true,
+    required: true
+  }
+})
 
 // Add more endpoints here!
+
+app.get("/users", (req, res) => {
+  User.find().then(allLogin => {
+    res.json(allLogin)
+  })
+})
+
+// Skapa ett item i mongodb
+app.post("/users", (req, res) => {
+  const { password } = req.body
+  const newUser = new User({
+    name: req.body.name,
+    email: req.body.email,
+    password: hash
+  })
+  newUser.save() // Sparar nytt item i databasen
+    .then(() => { res.status(201).send("Post created in Mongodb") }) // Promise: Skicka 201 till frontend när reglerna är uppfyllda & itemet är sparat
+    .catch(err => { res.status(400).send(err) }) // Promise: Skicka status 400 +
+    // felmeddelande till frontend när reglerna inte är uppfyllda
+})
 
 app.listen(8080, () => console.log("Compass API listening on port 8080!"))
