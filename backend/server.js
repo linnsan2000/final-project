@@ -47,6 +47,14 @@ app.get("/questions", (req, res) => {
   })
 })
 
+app.get("/questions/:id", (req, res) => {
+  const id = parseInt(req.params.id)
+  const oneQuestion = allQuestions.Questions.find(item => item.id === id)
+    res.json(oneQuestion)
+  })
+})
+
+
 // Skapa ett item i mongodb
 app.post("/questions", (req, res) => {
   const newQuestion = new Questions({

@@ -11,7 +11,7 @@ export default class QuestionItem extends React.Component {
   }
 
   componentDidMount() {
-    fetch("http://localhost:8080/questions")
+    fetch("http://localhost:8080/questions/")
       .then(response => (
         response.json()
       )).then(json => {

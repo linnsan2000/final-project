@@ -6,6 +6,7 @@ export default class Item extends React.Component {
     return (
       <div>
         <h1>{this.props.question}</h1>
+        <h1>{this.props.id}</h1>
       </div>
     )
   }
