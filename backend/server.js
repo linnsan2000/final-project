@@ -24,7 +24,7 @@ mongoose.connection.once("open", () => console.log("Connected to mongodb"))
 
 //
 // Define a model here.
-const User = mongoose.model("questions", {
+const Questions = mongoose.model("questions", {
   question: {
     type: String,
     required: true
@@ -44,6 +44,19 @@ app.get("/questions", (req, res) => {
   User.find().then(allQuestions => {
     res.json(allQuestions)
   })
+})
+
+// Skapa ett item i mongodb
+app.post("/questions", (req, res) => {
+  const newQuestion = new Questions({
+    question: req.body.question,
+    party: req.body.party,
+    answer: req.body.answer
+  })
+  newQuestion.save() // Sparar nytt item i databasen
+    .then(() => { res.status(201).send("Post created in Mongodb") }) // Promise: Skicka 201 till frontend när reglerna är uppfyllda & itemet är sparat
+    .catch(err => { res.status(400).send(err) }) // Promise: Skicka status 400 +
+    // felmeddelande till frontend när reglerna inte är uppfyllda
 })
 
 app.listen(8080, () => console.log("Compass API listening on port 8080!"))
