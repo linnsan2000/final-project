@@ -1,11 +1,12 @@
 import React from "react"
+import Questions from "./questions"
 
 class App extends React.Component {
 
   render() {
     return (
       <div>
-        Find me in src/app.js!
+        <Questions />
       </div>
     )
   }
