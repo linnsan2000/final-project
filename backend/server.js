@@ -32,14 +32,17 @@ const User = mongoose.model("questions", {
   party: {
     type: String,
     required: true
+  },
+  answer: {
+    type: Boolean
   }
 })
 
 // Add more endpoints here!
 
 app.get("/questions", (req, res) => {
-  User.find().then(allLogin => {
-    res.json(allLogin)
+  User.find().then(allQuestions => {
+    res.json(allQuestions)
   })
 })
 
