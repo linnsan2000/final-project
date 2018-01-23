@@ -23,7 +23,7 @@ export default class QuestionItem extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="questionContainer">
         <h1>{this.props.question}</h1>
         <p>{this.props.party}</p>
       </div>

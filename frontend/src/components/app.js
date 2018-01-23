@@ -5,31 +5,35 @@ class App extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      // currentQuestionIndex: 0
-      questions: []
+      currentQuestionIndex: 0
+      // questions: []
     }
   }
 
   componentDidMount() {
-    fetch("http://localhost:8080/questions/").then(response => {
-      return response.json()
-    }).then(json => {
-      this.setState({ questions: json })
-    })
+    fetch("http://localhost:8080/questions/")
+      .then(data => data.json())
+      .then(data => {
+        const questiondata = data[this.state.currentQuestionIndex]
+        JSON.stringify(questiondata)
+        console.log(questiondata)
+      })
   }
 
   render() {
-    // const question = data[this.state.currentQuestionIndex]
+    // const question = questionData[this.state.currentQuestionIndex]
     return (
       <div>
-        {this.state.questions.map(item => (
-          <QuestionItem
-            key={item._id}
-            id={item._id}
-            question={item.question}
-            party={item.party}
-            answer="true" />
-        ))}
+        {this.currentQuestionIndex}
+        {/* {this.state.questions.map(item => ( */}
+        {/* <QuestionItem */}
+          {/* // key={this.state.currentQuestionIndex}
+          // id={questiondata._id}
+          // question={questiondata.question}
+          // party={questiondata.party}
+          // answer="true"
+        // /> */}
+        {/* ))} */}
       </div>
     )
   }
