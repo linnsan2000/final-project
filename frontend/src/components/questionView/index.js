@@ -28,10 +28,22 @@ export default class QuestionView extends React.Component {
   // }
 
   handleNoAnswer = event => {
+    event.preventDefault()
+    // const nextQ = this.props.questions[this.props.currentQuestionIndex + 1].question
     this.setState({
       answer: false
+    }, () => {
+      console.log("Svaret", this.state.answer)
     })
-    return this.props.questions[this.props.currentQuestionIndex].question + 1
+  }
+
+  handleYesAnswer = event => {
+    event.preventDefault()
+    // this.props.questions(this.state.partyCounter, this.state.answer)
+    this.setState({
+      partyCounter: [],
+      answer: true
+    })
   }
 
   render() {
@@ -46,6 +58,7 @@ export default class QuestionView extends React.Component {
         <button
           className="no-btn"
           value="no"
+          // onSubmit={this.handleAnswerSubmit}
           onClick={this.handleNoAnswer}>NEJ
         </button>
       </div>

@@ -23,10 +23,20 @@ export default class QuestionItem extends React.Component {
   }
 
   render() {
+    console.log("Alla frågor", this.state.questions)
     if (this.state.questions.length > 0) {
       return (
         <div>
-          {this.state.questions[this.state.currentQuestionIndex].question}
+          <h1>
+            {this.state.questions[this.state.currentQuestionIndex].question}
+          </h1>
+          {/* {this.state.questions.map(question => (
+            <div
+              key={this.state.questions.id}
+              question={this.state.questions.question}
+              party={this.state.questions.party}
+              answer={this.state.questions.answer} />
+          ))} */}
         </div>)
     } else {
       return (

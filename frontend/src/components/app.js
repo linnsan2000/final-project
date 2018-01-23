@@ -1,5 +1,5 @@
 import React from "react"
-import QuestionView from "./question-view"
+import QuestionView from "./questionView"
 
 export default class App extends React.Component {
 
