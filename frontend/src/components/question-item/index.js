@@ -3,30 +3,37 @@ import "index.css"
 // import Item from ".././item"
 
 export default class QuestionItem extends React.Component {
-  // constructor(props) {
-  //   super(props)
-  //   this.state = {
-  //     questions: []
-  //   }
-  // }
-  //
-  // componentDidMount() {
-  //   fetch("http://localhost:8080/questions/")
-  //     .then(response => (
-  //       response.json()
-  //     )).then(json => {
-  //       this.setState({
-  //         questions: json
-  //       }, () => { console.log(json) })
-  //     })
-  // }
+  constructor(props) {
+    super(props)
+    this.state = {
+      currentQuestionIndex: 0,
+      questions: []
+    }
+  }
+
+  componentDidMount() {
+    fetch("http://localhost:8080/questions/")
+      .then(response => (
+        response.json()
+      )).then(json => {
+        this.setState({
+          questions: json
+        }, () => { console.log(json) })
+      })
+  }
 
   render() {
-    return (
-      <div className="questionContainer">
-        <h1>{this.props.question}</h1>
-        <p>{this.props.party}</p>
-      </div>
-    )
+    if (this.state.questions.length > 0) {
+      return (
+        <div>
+          {this.state.questions[this.state.currentQuestionIndex].question}
+        Thera are questions!
+        </div>)
+    } else {
+      return (
+        <div>
+        No questions yet
+        </div>)
+    }
   }
 }

@@ -1,40 +1,11 @@
 import React from "react"
-import QuestionItem from "./question-item"
+import QuestionView from "./question-view"
 
-class App extends React.Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      currentQuestionIndex: 0,
-      questions: []
-    }
-  }
-
-  componentDidMount() {
-    fetch("http://localhost:8080/questions/")
-      .then(response => (
-        response.json()
-      )).then(json => {
-        this.setState({
-          questions: json
-        }, () => { console.log(json) })
-      })
-  }
+export default class App extends React.Component {
 
   render() {
-    if (this.state.questions.length > 0) {
-      return (
-        <div>
-          {this.state.questions[this.state.currentQuestionIndex].question}
-        Thera are questions!
-        </div>)
-    } else {
-      return (
-        <div>
-        No questions yet
-        </div>)
-    }
+    return (
+      <QuestionView />
+    )
   }
 }
-
-export default App
