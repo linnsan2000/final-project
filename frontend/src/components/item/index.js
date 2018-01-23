@@ -1,4 +1,5 @@
 import React from "react"
+// import QuestionItem from "./question-item"
 
 export default class Item extends React.Component {
 
@@ -6,7 +7,7 @@ export default class Item extends React.Component {
     return (
       <div>
         <h1>{this.props.question}</h1>
-        <h1>{this.props.id}</h1>
+        <p>{this.props.party}</p>
       </div>
     )
   }
