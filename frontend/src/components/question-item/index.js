@@ -27,12 +27,11 @@ export default class QuestionItem extends React.Component {
       return (
         <div>
           {this.state.questions[this.state.currentQuestionIndex].question}
-        Thera are questions!
         </div>)
     } else {
       return (
         <div>
-        No questions yet
+        Loading questions...
         </div>)
     }
   }
