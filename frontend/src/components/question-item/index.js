@@ -46,7 +46,26 @@ export default class QuestionItem extends React.Component {
       answer: true,
       currentQuestionIndex: this.state.currentQuestionIndex + 1
     }, () => {
-      console.log("Svaret", this.state.answer, this.state.partyCounter)
+      const partys = {
+        Vänsterpartiet: [],
+        Socialdemokraterna: [],
+        Sverigedemokraterna: [],
+        Moderaterna: [],
+        Miljöpartiet: [],
+        Liberalerna: [],
+        Centerpartiet: [],
+        Kristdemokraterna: []
+      }
+      for (let i = 0; i < this.state.partyCounter.length; i += 1) {
+        if (this.state.partyCounter[i].party.length > 0) {
+          partys[this.state.partyCounter[i].party].push(this.state.partyCounter[i].party)
+        }
+        if (partys[this.state.partyCounter[i].party]) {
+          if (partys[this.state.partyCounter[i].party].length === 2) {
+            console.log(`Du har mest gemensamt med ${partys[this.state.partyCounter[i].party][0]}`)
+          }
+        }
+      }
     })
   }
 
