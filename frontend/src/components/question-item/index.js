@@ -26,7 +26,6 @@ export default class QuestionItem extends React.Component {
 
   handleNoAnswer = event => {
     event.preventDefault()
-    // const nextQ = this.props.questions[this.props.currentQuestionIndex + 1].question
     this.setState({
       answer: false,
       currentQuestionIndex: this.state.currentQuestionIndex + 1
