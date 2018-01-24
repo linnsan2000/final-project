@@ -7,7 +7,9 @@ export default class QuestionItem extends React.Component {
     super(props)
     this.state = {
       currentQuestionIndex: 0,
-      questions: []
+      questions: [],
+      partyCounter: [],
+      answer: true
     }
   }
 
@@ -22,6 +24,25 @@ export default class QuestionItem extends React.Component {
       })
   }
 
+  handleNoAnswer = event => {
+    event.preventDefault()
+    // const nextQ = this.props.questions[this.props.currentQuestionIndex + 1].question
+    this.setState({
+      answer: false
+    }, () => {
+      console.log("Svaret", this.state.answer)
+    })
+  }
+
+  handleYesAnswer = event => {
+    event.preventDefault()
+    // this.props.questions(this.state.partyCounter, this.state.answer)
+    this.setState({
+      partyCounter: [],
+      answer: true
+    })
+  }
+
   render() {
     console.log("Alla frågor", this.state.questions)
     if (this.state.questions.length > 0) {
@@ -30,6 +51,17 @@ export default class QuestionItem extends React.Component {
           <h1>
             {this.state.questions[this.state.currentQuestionIndex].question}
           </h1>
+          <button
+            className="yes-btn"
+            value="yes"
+            onClick={this.handleYesAnswer}>JA
+          </button>
+          <button
+            className="no-btn"
+            value="no"
+            // onSubmit={this.handleAnswerSubmit}
+            onClick={this.handleNoAnswer}>NEJ
+          </button>
           {/* {this.state.questions.map(question => (
             <div
               key={this.state.questions.id}
