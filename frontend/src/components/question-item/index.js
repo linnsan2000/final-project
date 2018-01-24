@@ -26,7 +26,6 @@ export default class QuestionItem extends React.Component {
 
   handleNoAnswer = event => {
     event.preventDefault()
-    // const nextQ = this.props.questions[this.props.currentQuestionIndex + 1].question
     this.setState({
       answer: false,
       currentQuestionIndex: this.state.currentQuestionIndex + 1
@@ -35,12 +34,15 @@ export default class QuestionItem extends React.Component {
     })
   }
 
-  handleYesAnswer = event => {
-    event.preventDefault()
-    // this.props.questions(this.state.partyCounter, this.state.answer)
+  handleYesAnswer = parties => {
+    const newCounter = this.state.questions[this.state.currentQuestionIndex].party
+    newCounter.push(parties)
     this.setState({
-      partyCounter: [],
-      answer: true
+      partyCounter: newCounter,
+      answer: true,
+      currentQuestionIndex: this.state.currentQuestionIndex + 1
+    }, () => {
+      console.log("Svaret", this.state.answer, this.state.questions[this.state.currentQuestionIndex].party)
     })
   }
 
