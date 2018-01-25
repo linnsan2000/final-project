@@ -10,16 +10,21 @@ import sd from "./../images/akesson.jpg"
 import kd from "./../images/buschthor.jpg"
 import c from "./../images/loof.jpg"
 
-
 const images = [v, s, mp, m, l, sd, kd, c]
 
-handleMatchingImage = image => {
-  this.setState({
-    image
-  })
-}
-
 export default class matchView extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      image: ""
+    }
+  }
+
+  handleMatchingImage = image => {
+    this.setState({
+      image
+    })
+  }
 
   render() {
     return (

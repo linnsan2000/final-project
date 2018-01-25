@@ -2,25 +2,27 @@ import React from "react"
 import "index.css"
 // import Item from ".././item"
 
-const parties = {
-  Vänsterpartiet: [],
-  Socialdemokraterna: [],
-  Sverigedemokraterna: [],
-  Moderaterna: [],
-  Miljöpartiet: [],
-  Liberalerna: [],
-  Centerpartiet: [],
-  Kristdemokraterna: []
-}
-
 export default class QuestionItem extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
       currentQuestionIndex: 0,
       questions: [],
-      partyCounter: [{ _id: 0, party: "", answer: true }]
-      // answer: true
+      partyCounter: [{
+        _id: 0,
+        party: ""
+      }],
+      parties: {
+        Vänsterpartiet: 0,
+        Socialdemokraterna: 0,
+        Sverigedemokraterna: 0,
+        Moderaterna: 0,
+        Miljöpartiet: 0,
+        Liberalerna: 0,
+        Centerpartiet: 0,
+        Kristdemokraterna: 0
+      },
+      winningParty: null
     }
   }
 
@@ -29,10 +31,26 @@ export default class QuestionItem extends React.Component {
       .then(response => (
         response.json()
       )).then(json => {
+        this.shuffle(json)
         this.setState({
           questions: json
         }, () => { console.log(json) })
       })
+  }
+
+  shuffle = array => {
+    let counter = array.length
+    // While there are elements in the array
+    while (counter > 0) {
+      // Pick a random index
+      const index = Math.floor(Math.random() * counter)
+      // Decrease counter by 1
+      counter -= 1
+      // And swap the last element with it
+      const temp = array[counter]
+      array[counter] = array[index]
+      array[index] = temp
+    }
   }
 
   handleNoAnswer = event => {
@@ -46,31 +64,29 @@ export default class QuestionItem extends React.Component {
   }
 
   handleYesAnswer = () => {
-    const newCounter = [...this.state.partyCounter]
-    newCounter.push({
+    const choosenParty = this.state.questions[this.state.currentQuestionIndex].party
+    const newCounter = [...this.state.partyCounter, {
       _id: this.state.currentQuestionIndex,
-      party: this.state.questions[this.state.currentQuestionIndex].party,
-      // answer: true
-    })
+      party: choosenParty,
+      answer: true
+    }]
+
+    const parties = { ...this.state.parties }
+    parties[choosenParty] = this.state.parties[choosenParty] + 1
+    let winningParty = null
+
+    if (parties[choosenParty] >= 2) {
+      winningParty = choosenParty
+    }
     this.setState({
       partyCounter: newCounter,
-      // answer: true,
-      currentQuestionIndex: this.state.currentQuestionIndex + 1
-    }
-    // , () => {
-    //   for (let choosenParty = 0; choosenParty < this.state.partyCounter.length; choosenParty += 1) {
-    //     if (this.state.partyCounter[choosenParty].party.length > 0) {
-    //       parties[this.state.partyCounter[choosenParty].party]
-    //         .push(this.state.partyCounter[choosenParty].party)
-    //     }
-    //     if (parties[this.state.partyCounter[choosenParty].party]) {
-    //       if (parties[this.state.partyCounter[choosenParty].party].length === 2) {
-    //         console.log(`Du har mest gemensamt med ${parties[this.state.partyCounter[choosenParty].party][0]}`)
-    //       }
-    //     }
-    //   }
-    // }
-    )
+      answer: true,
+      currentQuestionIndex: this.state.currentQuestionIndex + 1,
+      parties,
+      winningParty
+    }, () => {
+
+    })
   }
 
   render() {
@@ -91,6 +107,7 @@ export default class QuestionItem extends React.Component {
               value="yes"
               onClick={this.handleYesAnswer}>JA
             </button>
+            <h1>Du har mest gemensamt med {this.state.winningParty}</h1>
           </div>
           :
           <div>
