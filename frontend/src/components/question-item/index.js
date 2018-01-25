@@ -2,7 +2,7 @@ import React from "react"
 import { Link } from "react-router-dom"
 
 import "index.css"
-// import Item from ".././item"
+import LastPage from ".././lastPage"
 
 export default class QuestionItem extends React.Component {
   constructor(props) {
@@ -115,7 +115,7 @@ export default class QuestionItem extends React.Component {
   render() {
     if (this.state.currentQuestionIndex === this.state.questions.length) {
       return (
-        <div>Oops</div>
+        <LastPage />
       )
     } else {
       return (
@@ -140,7 +140,7 @@ export default class QuestionItem extends React.Component {
                 className="superlike-btn"
                 value="yes"
                 onClick={this.handleSuperlike}
-                disabled={this.state.isButtonDisabled}>Superlike
+                disabled={this.state.isButtonDisabled}>SUPERLIKE
               </button>
             </div>
             :
