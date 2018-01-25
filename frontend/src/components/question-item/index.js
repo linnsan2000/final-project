@@ -41,10 +41,6 @@ export default class QuestionItem extends React.Component {
       })
   }
 
-  componentWillUnmount() {
-    console.log("nu är frågorna slut")
-  }
-
   shuffle = array => {
     let counter = array.length
     // While there are elements in the array
