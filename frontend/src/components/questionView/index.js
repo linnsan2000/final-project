@@ -1,6 +1,6 @@
 import React from "react"
 import "index.css"
-import QuestionItem from "./../question-item"
+import QuestionItem from "./../questionItem"
 
 export default class QuestionView extends React.Component {
 
