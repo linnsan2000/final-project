@@ -31,6 +31,7 @@ export default class QuestionItem extends React.Component {
       .then(response => (
         response.json()
       )).then(json => {
+        this.shuffle(json)
         this.setState({
           questions: json
         }, () => { console.log(json) })
@@ -89,39 +90,32 @@ export default class QuestionItem extends React.Component {
   }
 
   render() {
-    // console.log("Alla frågor", this.state.questions)
-    if (this.state.questions.length > 0) {
-      return (
-        <div>
-          <h1>
-            {this.state.questions[this.state.currentQuestionIndex].question}
-          </h1>
-          {/* <p>{this.state.questions[this.state.currentQuestionIndex].party}</p> */}
-          <button
-            className="yes-btn"
-            value="yes"
-            onClick={this.handleYesAnswer}>JA
-          </button>
-          <button
-            className="no-btn"
-            value="no"
-            // onSubmit={this.handleAnswerSubmit}
-            onClick={this.handleNoAnswer}>NEJ
-          </button>
-          <h1>{this.state.winningParty}</h1>
-        </div>)
-    } else {
-      return (
-        <div>
-        Loading questions...
-        </div>)
-    }
-    // <div className="parties-match">
-    //   {
-    //       partys.map(symbol => (<div
-    //       id={symbol}/>
-    //       ))
-    //     }
-    // </div>
+    return (
+      <div className="questionContainer">
+        {this.state.questions.length > 0
+          ?
+          <div>
+            <h1>{this.state.questions[this.state.currentQuestionIndex].question}
+            </h1>
+            <button
+              className="no-btn"
+              value="no"
+              onClick={this.handleNoAnswer}>NEJ
+            </button>
+            <button
+              className="yes-btn"
+              value="yes"
+              onClick={this.handleYesAnswer}>JA
+            </button>
+            <h1>Du har mest gemensamt med {this.state.winningParty}</h1>
+          </div>
+          :
+          <div>
+            <h1>Loading questions...
+            </h1>
+          </div>
+        }
+      </div>
+    )
   }
 }
