@@ -7,6 +7,16 @@ export default class StartView extends React.Component {
   render() {
     return (
       <div className="Container">
+        <h1>MATCHA MED RÄTT PARTI</h1>
+        <h4>Har du svårt att välja vilket parti som ska få din röst?
+        Gör vår valkompass! Lite som Tinder, fast med politiker. Typ.
+        </h4>
+        <p>Så här gör man:
+          På skärmen dyker det upp ett antal påståenden – håller du med om påståendet
+          så swajpar du höger. Håller du inte med – swajpa vänster.
+          Under testet har du en SUPERLIKE som du kan använda på en fråga som
+          är extra viktig för dig.
+        </p>
         <button>
           <Link to="/questions">Starta testet</Link>
         </button>

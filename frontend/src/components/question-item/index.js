@@ -1,4 +1,6 @@
 import React from "react"
+import { Link } from "react-router-dom"
+
 import "index.css"
 // import Item from ".././item"
 
@@ -73,8 +75,7 @@ export default class QuestionItem extends React.Component {
     const choosenParty = this.state.questions[this.state.currentQuestionIndex].party
     const newCounter = [...this.state.partyCounter, {
       _id: this.state.currentQuestionIndex,
-      party: choosenParty,
-      answer: true
+      party: choosenParty
     }]
 
     const parties = { ...this.state.parties }
@@ -86,7 +87,6 @@ export default class QuestionItem extends React.Component {
     }
     this.setState({
       partyCounter: newCounter,
-      answer: true,
       currentQuestionIndex: this.state.currentQuestionIndex + 1,
       parties,
       winningParty
@@ -98,8 +98,7 @@ export default class QuestionItem extends React.Component {
     const choosenParty = this.state.questions[this.state.currentQuestionIndex].party
     const newCounter = [...this.state.partyCounter, {
       _id: this.state.currentQuestionIndex,
-      party: choosenParty,
-      answer: true
+      party: choosenParty
     }]
 
     const parties = { ...this.state.parties }
@@ -111,7 +110,6 @@ export default class QuestionItem extends React.Component {
     }
     this.setState({
       partyCounter: newCounter,
-      answer: true,
       currentQuestionIndex: this.state.currentQuestionIndex + 2,
       parties,
       winningParty,
@@ -129,6 +127,7 @@ export default class QuestionItem extends React.Component {
           <div>
             <h1>{this.state.questions[this.state.currentQuestionIndex].question}
             </h1>
+            <h2><Link to="/read-more">Läs mer om den här frågan</Link></h2>
             <button
               className="no-btn"
               value="no"

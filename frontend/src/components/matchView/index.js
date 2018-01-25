@@ -12,7 +12,7 @@ import c from "./../images/loof.jpg"
 
 const images = [v, s, mp, m, l, sd, kd, c]
 
-export default class matchView extends React.Component {
+export default class MatchView extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
