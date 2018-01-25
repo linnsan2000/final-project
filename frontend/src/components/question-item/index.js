@@ -2,6 +2,17 @@ import React from "react"
 import "index.css"
 // import Item from ".././item"
 
+const parties = {
+  Vänsterpartiet: [],
+  Socialdemokraterna: [],
+  Sverigedemokraterna: [],
+  Moderaterna: [],
+  Miljöpartiet: [],
+  Liberalerna: [],
+  Centerpartiet: [],
+  Kristdemokraterna: []
+}
+
 export default class QuestionItem extends React.Component {
   constructor(props) {
     super(props)
@@ -46,23 +57,14 @@ export default class QuestionItem extends React.Component {
       answer: true,
       currentQuestionIndex: this.state.currentQuestionIndex + 1
     }, () => {
-      const partys = {
-        Vänsterpartiet: [],
-        Socialdemokraterna: [],
-        Sverigedemokraterna: [],
-        Moderaterna: [],
-        Miljöpartiet: [],
-        Liberalerna: [],
-        Centerpartiet: [],
-        Kristdemokraterna: []
-      }
-      for (let i = 0; i < this.state.partyCounter.length; i += 1) {
-        if (this.state.partyCounter[i].party.length > 0) {
-          partys[this.state.partyCounter[i].party].push(this.state.partyCounter[i].party)
+      for (let choosenParty = 0; choosenParty < this.state.partyCounter.length; choosenParty += 1) {
+        if (this.state.partyCounter[choosenParty].party.length > 0) {
+          parties[this.state.partyCounter[choosenParty].party]
+            .push(this.state.partyCounter[choosenParty].party)
         }
-        if (partys[this.state.partyCounter[i].party]) {
-          if (partys[this.state.partyCounter[i].party].length === 2) {
-            console.log(`Du har mest gemensamt med ${partys[this.state.partyCounter[i].party][0]}`)
+        if (parties[this.state.partyCounter[choosenParty].party]) {
+          if (parties[this.state.partyCounter[choosenParty].party].length === 2) {
+            console.log(`Du har mest gemensamt med ${parties[this.state.partyCounter[choosenParty].party][0]}`)
           }
         }
       }
@@ -103,5 +105,12 @@ export default class QuestionItem extends React.Component {
         Loading questions...
         </div>)
     }
+    <div className="parties-match">
+      {
+          parties.map(symbol => (<div
+          id={symbol}/>
+          ))
+        }
+    </div>
   }
 }
