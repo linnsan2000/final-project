@@ -42,8 +42,7 @@ export default class QuestionItem extends React.Component {
   }
 
   componentWillUnmount() {
-    // Visa ny sida med typ "oj då..."
-    // knapp: gör testet igen
+    console.log("nu är frågorna slut")
   }
 
   shuffle = array => {
@@ -66,8 +65,6 @@ export default class QuestionItem extends React.Component {
     this.setState({
       // answer: false,
       currentQuestionIndex: this.state.currentQuestionIndex + 1
-    }, () => {
-      console.log("Svaret", this.state.questions[this.state.currentQuestionIndex].party, this.state.currentQuestionIndex)
     })
   }
 
@@ -120,44 +117,50 @@ export default class QuestionItem extends React.Component {
   }
 
   render() {
-    return (
-      <div className="questionContainer">
-        {this.state.questions.length > 0
-          ?
-          <div>
-            <h1>{this.state.questions[this.state.currentQuestionIndex].question}
-            </h1>
-            <h2><Link to="/read-more">Läs mer om den här frågan</Link></h2>
-            <button
-              className="no-btn"
-              value="no"
-              onClick={this.handleNoAnswer}>NEJ
-            </button>
-            <button
-              className="yes-btn"
-              value="yes"
-              onClick={this.handleYesAnswer}>JA
-            </button>
-            <button
-              className="superlike-btn"
-              value="yes"
-              onClick={this.handleSuperlike}
-              disabled={this.state.isButtonDisabled}>Superlike
-            </button>
-          </div>
-          :
-          <div>
-            <h1>Loading questions...
-            </h1>
-          </div>
-        }
-        {this.state.winningParty
-          ?
-          <h3>Du har mest gemensamt med {this.state.winningParty}</h3>
-          :
-          <div />
-        }
-      </div>
-    )
+    if (this.state.currentQuestionIndex === this.state.questions.length) {
+      return (
+        <div>Oops</div>
+      )
+    } else {
+      return (
+        <div className="questionContainer">
+          {this.state.questions.length > 0
+            ?
+            <div>
+              <h1>{this.state.questions[this.state.currentQuestionIndex].question}
+              </h1>
+              <h2><Link to="/read-more">Läs mer om den här frågan</Link></h2>
+              <button
+                className="no-btn"
+                value="no"
+                onClick={this.handleNoAnswer}>NEJ
+              </button>
+              <button
+                className="yes-btn"
+                value="yes"
+                onClick={this.handleYesAnswer}>JA
+              </button>
+              <button
+                className="superlike-btn"
+                value="yes"
+                onClick={this.handleSuperlike}
+                disabled={this.state.isButtonDisabled}>Superlike
+              </button>
+            </div>
+            :
+            <div>
+              <h1>Loading questions...
+              </h1>
+            </div>
+          }
+          {this.state.winningParty
+            ?
+            <h3>Du har mest gemensamt med {this.state.winningParty}</h3>
+            :
+            <div />
+          }
+        </div>
+      )
+    }
   }
 }
