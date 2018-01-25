@@ -22,7 +22,8 @@ export default class QuestionItem extends React.Component {
         Centerpartiet: 0,
         Kristdemokraterna: 0
       },
-      winningParty: null
+      winningParty: null,
+      isButtonDisabled: false
     }
   }
 
@@ -36,6 +37,11 @@ export default class QuestionItem extends React.Component {
           questions: json
         }, () => { console.log(json) })
       })
+  }
+
+  componentWillUnmount() {
+    // Visa ny sida med typ "oj då..."
+    // knapp: gör testet igen
   }
 
   shuffle = array => {
@@ -75,7 +81,7 @@ export default class QuestionItem extends React.Component {
     parties[choosenParty] = this.state.parties[choosenParty] + 1
     let winningParty = null
 
-    if (parties[choosenParty] >= 2) {
+    if (parties[choosenParty] >= 3) {
       winningParty = choosenParty
     }
     this.setState({
@@ -84,6 +90,32 @@ export default class QuestionItem extends React.Component {
       currentQuestionIndex: this.state.currentQuestionIndex + 1,
       parties,
       winningParty
+    }, () => {
+    })
+  }
+
+  handleSuperlike= () => {
+    const choosenParty = this.state.questions[this.state.currentQuestionIndex].party
+    const newCounter = [...this.state.partyCounter, {
+      _id: this.state.currentQuestionIndex,
+      party: choosenParty,
+      answer: true
+    }]
+
+    const parties = { ...this.state.parties }
+    parties[choosenParty] = this.state.parties[choosenParty] + 2
+    let winningParty = null
+
+    if (parties[choosenParty] >= 3) {
+      winningParty = choosenParty
+    }
+    this.setState({
+      partyCounter: newCounter,
+      answer: true,
+      currentQuestionIndex: this.state.currentQuestionIndex + 2,
+      parties,
+      winningParty,
+      isButtonDisabled: true
     }, () => {
 
     })
@@ -106,6 +138,12 @@ export default class QuestionItem extends React.Component {
               className="yes-btn"
               value="yes"
               onClick={this.handleYesAnswer}>JA
+            </button>
+            <button
+              className="superlike-btn"
+              value="yes"
+              onClick={this.handleSuperlike}
+              disabled={this.state.isButtonDisabled}>Superlike
             </button>
           </div>
           :
