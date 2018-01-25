@@ -107,13 +107,18 @@ export default class QuestionItem extends React.Component {
               value="yes"
               onClick={this.handleYesAnswer}>JA
             </button>
-            <h1>Du har mest gemensamt med {this.state.winningParty}</h1>
           </div>
           :
           <div>
             <h1>Loading questions...
             </h1>
           </div>
+        }
+        {this.state.winningParty
+          ?
+          <h3>Du har mest gemensamt med {this.state.winningParty}</h3>
+          :
+          <div />
         }
       </div>
     )
