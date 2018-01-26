@@ -9,12 +9,14 @@ export default class Navigation extends React.Component {
     return (
       <div className="navigation">
         <button
+          className="round-btn"
           // className="no-btn"
           value="no"
           onClick={this.props.handleNoAnswer}>
           <i className="fa fa-times" aria-hidden="true" />
         </button>
         <button
+          className="round-btn"
           // className="superlike-btn"
           value="yes"
           onClick={this.props.handleSuperlike}
@@ -22,6 +24,7 @@ export default class Navigation extends React.Component {
           <i className="fa fa-star" aria-hidden="true" />
         </button>
         <button
+          className="round-btn"
           // className="yes-btn"
           value="yes"
           onClick={this.props.handleYesAnswer}>

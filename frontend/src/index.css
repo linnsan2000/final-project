@@ -5,6 +5,7 @@ body, html {
   display: flex;
   margin: 0;
   padding: 0;
+  background: #f7f7f7;
   font-family: 'Open Sans', sans-serif;
 }
 
@@ -31,8 +32,8 @@ body, html {
 }
 
 h1 {
-  font-size: 28px;
-  line-height: 34px;
+  font-size: 20px;
+  line-height: 24px;
   font-family: 'Open Sans', sans-serif;
 }
 
@@ -65,10 +66,11 @@ button {
   justify-content: space-around;
   align-items: center;
   height: 60px;
-  background: lightblue;
+  /*background: #ffffff;*/
   padding: 0 40px 0 40px;
   left: 0;
   right: 0;
+  bottom: 0;
 }
 
 .btn {
@@ -88,6 +90,32 @@ button {
 
 .fa {
   font-size: 30px !important;
+}
+
+.fa-heart {
+  font-size: 26px !important;
+  padding-top: 4px;
+  color: green;
+}
+
+.fa-star {
+  font-size: 28px !important;
+  padding-top: 1px;
+  color: blue;
+}
+
+.fa-times {
+  font-size: 30px !important;
+  padding-bottom: 2px;
+  color: red;
+}
+
+.round-btn {
+  width: 40px;
+  height: 40px;
+  background: #ffffff;
+  border-radius: 100%;
+  box-shadow: 2px 2px 8px 1px rgba(0,0,0,0.13);
 }
 
 /*.yes-btn {
