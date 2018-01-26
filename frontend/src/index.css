@@ -46,7 +46,7 @@ button {
   border: none;
 }
 
-.starttest {
+.btn {
   border-radius: 46px;
   padding: 16px 32px 16px 32px;
   font-family: "Arial", sans-serif;
@@ -57,6 +57,8 @@ button {
   background: #dd2a30;
   border: 1px solid #dd2a30;
   margin-top: 40px;
+  cursor: pointer;
+  color: #fff;
 }
 
 .yes-btn {

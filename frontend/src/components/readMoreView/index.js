@@ -8,9 +8,9 @@ export default class ReadMoreView extends React.Component {
     return (
       <div className="Container">
         <p>Här ska det stå en text om frågan man har tryckt på för att få läsa på mer.</p>
-        <button>
-          <Link to="/questions">Tillbaka till testet</Link>
-        </button>
+        <Link to="/questions"><button className="btn">
+          TILLBAKA TILL TESTET</button>
+        </Link>
       </div>
     )
   }
