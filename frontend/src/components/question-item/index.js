@@ -1,8 +1,8 @@
 import React from "react"
 import { Link } from "react-router-dom"
-
 import "index.css"
 import LastPage from ".././lastPage"
+import MatchView from ".././matchView"
 
 export default class QuestionItem extends React.Component {
   constructor(props) {
@@ -59,7 +59,6 @@ export default class QuestionItem extends React.Component {
   handleNoAnswer = event => {
     event.preventDefault()
     this.setState({
-      // answer: false,
       currentQuestionIndex: this.state.currentQuestionIndex + 1
     })
   }
@@ -117,6 +116,10 @@ export default class QuestionItem extends React.Component {
       return (
         <LastPage />
       )
+    } else if (!this.state.winningParty === null) {
+      return (
+        <MatchView />
+      )
     } else {
       return (
         <div className="questionContainer">
@@ -148,12 +151,6 @@ export default class QuestionItem extends React.Component {
               <h1>Loading questions...
               </h1>
             </div>
-          }
-          {this.state.winningParty
-            ?
-            <h3>Du har mest gemensamt med {this.state.winningParty}</h3>
-            :
-            <div />
           }
         </div>
       )

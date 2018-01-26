@@ -36,6 +36,13 @@ h1 {
   font-family: 'Open Sans', sans-serif;
 }
 
+h2 {
+  font-size: 18px;
+  line-height: 24px;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+}
+
 a {
   text-decoration: none;
   color: #fff;
@@ -116,6 +123,7 @@ button {
 }
 .superlike-btn:before,
 .superlike-btn:after {
+  cursor: pointer;
   position: absolute;
   content: "";
   left: 50px;

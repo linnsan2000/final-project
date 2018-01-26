@@ -13,24 +13,17 @@ import c from "./../images/loof.jpg"
 const images = [v, s, mp, m, l, sd, kd, c]
 
 export default class MatchView extends React.Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      image: ""
-    }
-  }
 
-  handleMatchingImage = image => {
-    this.setState({
-      image
-    })
-  }
+//   handleMatchingImage = () => {
+//     if (this.props.winningParty === ima
+// }
 
   render() {
     return (
       <div>
+        <h3>Du har mest gemensamt med {this.props.winningParty}</h3>
         {/* // show matching image */}
-        <img className="matchingImage" src={this.props.matchingImage} alt="" />
+        {/* <img className="matchingImage" src={this.images} alt="" /> */}
       </div>
     )
   }
