@@ -7,9 +7,11 @@ export default class lastPage extends React.Component {
     return (
       <div>
         <h1>Oops</h1>
-        <button className="btn">
-          <Link to="/">Gör testet igen</Link>
-        </button>
+        <Link to="/">
+          <button className="btn">
+            Gör testet igen
+          </button>
+        </Link>
       </div>
     )
   }

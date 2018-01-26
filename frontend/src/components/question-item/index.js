@@ -125,7 +125,7 @@ export default class QuestionItem extends React.Component {
             <div>
               <h1>{this.state.questions[this.state.currentQuestionIndex].question}
               </h1>
-              <h2><Link to="/read-more">Läs mer om den här frågan</Link></h2>
+              <Link to="/read-more"><h2>Läs mer om den här frågan</h2></Link>
               <button
                 className="no-btn"
                 value="no"
