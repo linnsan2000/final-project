@@ -6,10 +6,11 @@ import LastPage from ".././lastPage"
 
 export default class QuestionItem extends React.Component {
   constructor(props) {
+    const questions = JSON.parse(localStorage.getItem("savedData"))
     super(props)
     this.state = {
       currentQuestionIndex: 0,
-      questions: [],
+      questions: questions || [],
       partyCounter: [{
         _id: 0,
         party: ""
@@ -30,6 +31,10 @@ export default class QuestionItem extends React.Component {
   }
 
   componentDidMount() {
+    this.setQuestions(this.questions)
+  }
+
+  setQuestions() {
     fetch("http://localhost:8080/questions/")
       .then(response => (
         response.json()
@@ -37,7 +42,9 @@ export default class QuestionItem extends React.Component {
         this.shuffle(json)
         this.setState({
           questions: json
-        }, () => { console.log(json) })
+        }, () => {
+          localStorage.setItem("savedData", JSON.stringify(this.state.questions))
+        })
       })
   }
 
