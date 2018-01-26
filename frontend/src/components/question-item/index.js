@@ -134,10 +134,15 @@ export default class QuestionItem extends React.Component {
         <div className="questionContainer">
           {this.state.questions.length > 0
             ?
-            <div>
+            <div className="content">
               <h1>{this.state.questions[this.state.currentQuestionIndex].question}
               </h1>
-              <Link to="/read-more"><h2>Läs mer om den här frågan</h2></Link>
+              <button className="info-btn">
+                <Link to="/read-more" className="info-text">
+                  <i className="fa fa-info-circle" aria-hidden="true" />
+                  <p className="info-text">Läs mer om den här frågan</p>
+                </Link>
+              </button>
             </div>
             :
             <div>
