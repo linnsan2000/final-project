@@ -125,7 +125,8 @@ export default class QuestionItem extends React.Component {
       )
     } else if (this.state.winningParty !== null) {
       return (
-        <MatchView />
+        <MatchView
+          winningParty={this.state.winningParty} />
       )
     } else {
       return (
