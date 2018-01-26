@@ -140,7 +140,7 @@ export default class QuestionItem extends React.Component {
                 className="superlike-btn"
                 value="yes"
                 onClick={this.handleSuperlike}
-                disabled={this.state.isButtonDisabled}>SUPERLIKE
+                disabled={this.state.isButtonDisabled}>SUPER-LIKE
               </button>
             </div>
             :

@@ -14,11 +14,12 @@ export default class StartView extends React.Component {
         <p>Så här gör man:
           På skärmen dyker det upp ett antal påståenden – håller du med om påståendet
           så swajpar du höger. Håller du inte med – swajpa vänster.
-          Under testet har du en SUPERLIKE som du kan använda på en fråga som
+        </p>
+        <p>Under testet har du EN SUPERLIKE som du kan använda på en fråga som
           är extra viktig för dig.
         </p>
-        <button>
-          <Link to="/questions">Starta testet</Link>
+        <button className="starttest">
+          <Link to="/questions">STARTA TESTET</Link>
         </button>
       </div>
     )

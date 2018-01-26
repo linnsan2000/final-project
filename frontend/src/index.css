@@ -1,8 +1,11 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700');
+
+
 body, html {
   display: flex;
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
+  font-family: 'Open Sans', sans-serif;
 }
 
 .Container {
@@ -21,21 +24,46 @@ body, html {
 }
 
 .questionContainer {
-  width: 70%;
+  box-sizing: border-box;
+  width: 80%;
+  padding: 0 20px 0 20px;
+  background: lightgrey;
 }
 
 h1 {
-  font-size: 6vw;
-  font-family:
+  font-size: 28px;
+  line-height: 34px;
+  font-family: 'Open Sans', sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
 }
 
 button {
+  background: transparent;
+  border: none;
+}
+
+.starttest {
+  border-radius: 46px;
+  padding: 16px 32px 16px 32px;
+  font-family: "Arial", sans-serif;
+  font-size: 12px;
+  line-height: 14px;
+  font-weight: bold;
+  letter-spacing: 0.2px;
+  background: #dd2a30;
+  border: 1px solid #dd2a30;
+  margin-top: 40px;
+}
+
+.yes-btn {
   display: inline-block;
-  height: 80px;
-  width: 80px;
   border-radius: 50%;
   background: #F7F7FA;
-  border: 1px solid rgba(127, 127, 127, 0.4);
+  border: 0.7px solid rgba(127, 127, 127, 0.4);
   font-family: "Arial", sans-serif;
   font-size: 16px;
   line-height: 14px;
@@ -43,26 +71,67 @@ button {
   letter-spacing: 0.2px;
   top: 300px;
   cursor: pointer;
+  height: 80px;
+  width: 80px;
+  position: absolute;
+  right: 10px;
 }
 
-button:active {
+.no-btn {
+  display: inline-block;
+  border-radius: 50%;
+  background: #F7F7FA;
+  border: 0.7px solid rgba(127, 127, 127, 0.4);
+  font-family: "Arial", sans-serif;
+  font-size: 16px;
+  line-height: 14px;
+  font-weight: bold;
+  letter-spacing: 0.2px;
+  top: 300px;
+  cursor: pointer;
+  height: 80px;
+  width: 80px;
+  position: absolute;
+  left: 10px;
+}
+
+.no-btn:active {
   background: #222222;
   border: none;
   color: #fff;
 }
 
-/*button:hover {
-  background: #f7f7fa;
-  border: rgba(127, 127, 127, 0.4);
-  color: #000;
-}*/
-
-.yes-btn {
-  position: absolute;
-  right: 20px;
+.yes-btn:active {
+  background: #222222;
+  border: none;
+  color: #fff;
 }
 
-.no-btn {
+.superlike-btn {
+  position: relative;
+  width: 100px;
+  height: 90px;
+}
+.superlike-btn:before,
+.superlike-btn:after {
   position: absolute;
-  left: 20px;
+  content: "";
+  left: 50px;
+  top: 0;
+  width: 50px;
+  height: 80px;
+  background: #dd2a30;
+  border-radius: 50px 50px 0 0;
+  transform: rotate(-45deg);
+  transform-origin: 0 100%;
+}
+.superlike-btn:after {
+  left: 0;
+  transform: rotate(45deg);
+  transform-origin :100% 100%;
+}
+
+.superlike-btn:disabled:before,
+.superlike-btn:disabled:after {
+  background: #f7f7fa;
 }
