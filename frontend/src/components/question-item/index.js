@@ -123,7 +123,7 @@ export default class QuestionItem extends React.Component {
       return (
         <LastPage />
       )
-    } else if (!this.state.winningParty === null) {
+    } else if (this.state.winningParty !== null) {
       return (
         <MatchView />
       )

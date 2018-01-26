@@ -18,17 +18,14 @@ export default class StartView extends React.Component {
         <p>Under testet har du EN SUPERLIKE som du kan använda på en fråga som
           är extra viktig för dig.
         </p>
-<<<<<<< HEAD
         <button className="btn">
           <Link to="/questions">STARTA TESTET</Link>
         </button>
-=======
         <Link to="/questions">
           <button className="starttest">
             STARTA TESTET
           </button>
         </Link>
->>>>>>> 84b5bc26925e22fb8c4210e629ad81ff9e823cbb
       </div>
     )
   }
