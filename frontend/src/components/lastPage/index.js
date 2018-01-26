@@ -8,7 +8,7 @@ export default class lastPage extends React.Component {
       <div>
         <h1>Oops</h1>
         <Link to="/">
-          <button className="btn">Gör testet igen</button>
+          <button className="btn">GÖR TESTET IGEN</button>
         </Link>
       </div>
     )
