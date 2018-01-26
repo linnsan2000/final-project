@@ -53,6 +53,24 @@ button {
   border: none;
 }
 
+.invisible {
+  display: none;
+}
+
+.navigation {
+  position: absolute;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  height: 60px;
+  background: lightblue;
+  padding: 0 40px 0 40px;
+  left: 0;
+  right: 0;
+}
+
 .btn {
   border-radius: 46px;
   padding: 16px 32px 16px 32px;
@@ -68,22 +86,22 @@ button {
   color: #fff;
 }
 
-.yes-btn {
+.fa {
+  font-size: 30px !important;
+}
+
+/*.yes-btn {
   display: inline-block;
   border-radius: 50%;
   background: #F7F7FA;
   border: 0.7px solid rgba(127, 127, 127, 0.4);
   font-family: "Arial", sans-serif;
-  font-size: 16px;
-  line-height: 14px;
+  font-size: 12px;
   font-weight: bold;
   letter-spacing: 0.2px;
-  top: 300px;
   cursor: pointer;
-  height: 80px;
-  width: 80px;
-  position: absolute;
-  right: 10px;
+  height: 40px;
+  width: 40px;
 }
 
 .no-btn {
@@ -92,16 +110,12 @@ button {
   background: #F7F7FA;
   border: 0.7px solid rgba(127, 127, 127, 0.4);
   font-family: "Arial", sans-serif;
-  font-size: 16px;
-  line-height: 14px;
+  font-size: 12px;
   font-weight: bold;
   letter-spacing: 0.2px;
-  top: 300px;
   cursor: pointer;
-  height: 80px;
-  width: 80px;
-  position: absolute;
-  left: 10px;
+  height: 40px;
+  width: 40px;
 }
 
 .no-btn:active {
@@ -114,24 +128,24 @@ button {
   background: #222222;
   border: none;
   color: #fff;
-}
+}*/
 
-.superlike-btn {
+/*.superlike-btn {
   position: relative;
-  width: 100px;
-  height: 90px;
+  width: 50px;
+  height: 45px;
 }
 .superlike-btn:before,
 .superlike-btn:after {
   cursor: pointer;
   position: absolute;
   content: "";
-  left: 50px;
+  left: 25px;
   top: 0;
-  width: 50px;
-  height: 80px;
+  width: 25px;
+  height: 40px;
   background: #dd2a30;
-  border-radius: 50px 50px 0 0;
+  border-radius: 25px 25px 0 0;
   transform: rotate(-45deg);
   transform-origin: 0 100%;
 }
@@ -144,4 +158,4 @@ button {
 .superlike-btn:disabled:before,
 .superlike-btn:disabled:after {
   background: #f7f7fa;
-}
+}*/

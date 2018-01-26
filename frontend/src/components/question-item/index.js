@@ -3,6 +3,7 @@ import { Link } from "react-router-dom"
 import "index.css"
 import LastPage from ".././lastPage"
 import MatchView from ".././matchView"
+import Navigation from ".././navigation"
 
 export default class QuestionItem extends React.Component {
   constructor(props) {
@@ -137,22 +138,6 @@ export default class QuestionItem extends React.Component {
               <h1>{this.state.questions[this.state.currentQuestionIndex].question}
               </h1>
               <Link to="/read-more"><h2>Läs mer om den här frågan</h2></Link>
-              <button
-                className="no-btn"
-                value="no"
-                onClick={this.handleNoAnswer}>NEJ
-              </button>
-              <button
-                className="yes-btn"
-                value="yes"
-                onClick={this.handleYesAnswer}>JA
-              </button>
-              <button
-                className="superlike-btn"
-                value="yes"
-                onClick={this.handleSuperlike}
-                disabled={this.state.isButtonDisabled}>SUPER-LIKE
-              </button>
             </div>
             :
             <div>
@@ -160,6 +145,13 @@ export default class QuestionItem extends React.Component {
               </h1>
             </div>
           }
+          <div>
+            <Navigation
+              handleNoAnswer={this.handleNoAnswer}
+              handleYesAnswer={this.handleYesAnswer}
+              handleSuperlike={this.handleSuperlike}
+              isButtonDisabled={this.state.isButtonDisabled} />
+          </div>
         </div>
       )
     }
