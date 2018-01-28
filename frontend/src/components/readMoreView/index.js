@@ -6,7 +6,7 @@ export default class ReadMoreView extends React.Component {
 
   render() {
     return (
-      <div className="Container">
+      <div className="page-container">
         <p>Här ska det stå en text om frågan man har tryckt på för att få läsa på mer.</p>
         <Link to="/questions"><button className="btn">
           TILLBAKA TILL TESTET</button>

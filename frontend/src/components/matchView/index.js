@@ -20,7 +20,7 @@ export default class MatchView extends React.Component {
 
   render() {
     return (
-      <div className="questionContainer">
+      <div className="winning-container">
         <h3>Du har mest gemensamt med {this.props.winningParty}</h3>
         {/* // show matching image */}
         {/* <img className="matchingImage" src={this.images} alt="" /> */}
