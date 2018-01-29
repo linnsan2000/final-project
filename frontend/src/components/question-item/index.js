@@ -1,7 +1,8 @@
 import React from "react"
-import ReactSwipe from "react-swipe"
+// import ReactSwipe from "react-swipe"
 // import { Link } from "react-router-dom"
 import "index.css"
+import ReadMoreView from "./../readMoreView"
 import LastPage from ".././lastPage"
 import MatchView from ".././matchView"
 import Navigation from ".././navigation"
@@ -28,7 +29,8 @@ export default class QuestionItem extends React.Component {
         Kristdemokraterna: 0
       },
       winningParty: null,
-      isButtonDisabled: false
+      isButtonDisabled: false,
+      isOpen: false
     }
   }
 
@@ -120,6 +122,12 @@ export default class QuestionItem extends React.Component {
     })
   }
 
+  toggleModal = () => {
+    this.setState({
+      isOpen: !this.state.isOpen
+    })
+  }
+
   render() {
     if (this.state.currentQuestionIndex === this.state.questions.length) {
       return (
@@ -143,6 +151,12 @@ export default class QuestionItem extends React.Component {
             <div className="content">
               <h1>{this.state.questions[this.state.currentQuestionIndex].question}
               </h1>
+              <button
+                className="info-btn"
+                onClick={this.toggleModal}>
+                <i className="fa fa-info-circle" aria-hidden="true" />
+                &nbsp; Läs mer om den här frågan
+              </button>
             </div>
             :
             <div>
@@ -153,6 +167,9 @@ export default class QuestionItem extends React.Component {
           {/* </div> */}
           {/* </ReactSwipe> */}
           <div>
+            <ReadMoreView
+              show={this.state.isOpen}
+              onClose={this.toggleModal} />
             <Navigation
               handleNoAnswer={this.handleNoAnswer}
               handleYesAnswer={this.handleYesAnswer}
