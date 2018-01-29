@@ -15,7 +15,17 @@
   border-radius: 50%;
   width: 65%;
   border: solid 5px black;
-  margin: 10px 0 20px 0;
+  animation-name: swoop;
+  animation-duration: 0.5s;
+  animation-iteration-count: 1;
+  z-index: 1;
+}
+
+@keyframes swoop {
+    0% {margin-left: -1000px;}
+    50% {margin-left: 100px;}
+    75% {margin-left: 10px;}
+    100% {margin-left: 100px;}
 }
 
 #match-style {
@@ -24,9 +34,6 @@
   color: white;
 }
 
-h3 {
-  font-size: 30px;
-}
 
 .container {
   display: none;

@@ -22,6 +22,23 @@ const images = {
 }
 
 export default class MatchView extends React.Component {
+  // constructor() {
+  //   super()
+  //
+  //   this.state = {
+  //     mounted: false
+  //   }
+  // }
+
+  // componentDidMount() {
+  //   this.toggleImage()
+  // }
+  //
+  // toggleImage = () => {
+  //   this.setState({
+  //     mounted: true
+  //   })
+  // }
 
   render() {
     return (
