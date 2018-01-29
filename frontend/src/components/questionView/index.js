@@ -8,36 +8,29 @@ export default class QuestionView extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      showInfo: null
+      isOpen: false
     }
   }
 
-  handleReadMoreView = () => {
+  toggleModal = () => {
     this.setState({
-      showInfo: !null
+      isOpen: !this.state.isOpen
     })
   }
 
   render() {
-    if (this.state.showInfo !== null && <ReadMoreView />) {
-      return (
-        <div>
-          <ReadMoreView
-            question={this.state.showInfo} />
-        </div>
-      )
-    } else {
-      return (
-        <div className="container">
-          <QuestionItem />
-          <button
-            className="info-btn"
-            onClick={this.handleReadMoreView}>
-            <i className="fa fa-info-circle" aria-hidden="true" />
-            <p className="info-text">Läs mer om den här frågan</p>
-          </button>
-        </div>
-      )
-    }
+    return (
+      <div className="container">
+        <QuestionItem />
+        <button
+          className="btn"
+          onClick={this.toggleModal}>
+          Läs mer om den här frågan
+        </button>
+        <ReadMoreView
+          show={this.state.isOpen}
+          onClose={this.toggleModal} />
+      </div>
+    )
   }
 }

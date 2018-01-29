@@ -1,17 +1,22 @@
 import React from "react"
 import "index.css"
-import { Link } from "react-router-dom"
+// import { Link } from "react-router-dom"
 
 export default class ReadMoreView extends React.Component {
 
   render() {
+    if (!this.props.show) {
+      return null
+    }
     return (
       <div className="page-container">
-        {this.props.showInfo}
+        {this.props.children}
         <p>Här ska det stå en text om frågan man har tryckt på för att få läsa på mer.</p>
-        <Link to="/questions"><button className="btn">
-          TILLBAKA TILL TESTET</button>
-        </Link>
+        <button
+          className="btn"
+          onClick={this.props.onClose}>
+          TILLBAKA TILL TESTET
+        </button>
       </div>
     )
   }
