@@ -1,6 +1,5 @@
 import React from "react"
-import { Link } from "react-router-dom"
-import "./index.css"
+import "index.css"
 
 import Vänsterpartiet from "./../images/sjostedt.jpg"
 import Socialdemokraterna from "./../images/lofven.jpg"
@@ -11,7 +10,7 @@ import Sverigedemokraterna from "./../images/akesson.jpg"
 import Kristdemokraterna from "./../images/buschthor.jpg"
 import Centerpartiet from "./../images/loof.jpg"
 
-const images = {
+const images = [
   Vänsterpartiet,
   Socialdemokraterna,
   Miljöpartiet,
@@ -20,22 +19,18 @@ const images = {
   Sverigedemokraterna,
   Kristdemokraterna,
   Centerpartiet
-}
+]
 
-export default class MatchView extends React.Component {
+export default class AllPartiesView extends React.Component {
 
   render() {
     return (
-
-      <div className="noflex-container">
-        <h1 className="Sacramento white">Du har en matchning!</h1>
-        <img className="matchImg" src={images[this.props.winningParty]} alt="" />
-        <div className="winning-container">
-          <h4>Testet visar att du tycker likadant som<span className="bold-text"> {this.props.winningParty} </span>i flera frågor</h4>
-          <Link to="/all-parties">
-            <h4>Läs mer om de andra sju riksdagspartierna här</h4>
-          </Link>
-        </div>
+      <div>
+        {
+          images.map(symbol => (
+            <div
+              symbol={symbol} />
+          ))}
       </div>
     )
   }
