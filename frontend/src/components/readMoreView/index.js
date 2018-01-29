@@ -13,9 +13,7 @@ export default class ReadMoreView extends React.Component {
         <div className="modal">
           <p>Här ska det stå en text om frågan man har tryckt på för att få läsa på mer.</p>
           <button
-            className="btn"
-            onClick={this.props.onClose}>
-          TILLBAKA TILL TESTET
+            onClick={this.props.onClose}><i className="fa fa-times-circle" aria-hidden="true" />
           </button>
         </div>
       </div>

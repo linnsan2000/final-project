@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700');
 
+@import url('https://fonts.googleapis.com/css?family=Sacramento');
+
 body, html {
   display: flex;
   margin: 0;
@@ -24,9 +26,21 @@ h2 {
   font-weight: 400;
 }
 
+h4 {
+  font-size: 14px;
+  line-height: 18px;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 700;
+  margin: 0;
+}
+
 a {
   text-decoration: none;
   color: #fff;
+}
+
+p {
+  margin: 0;
 }
 
 button {
@@ -34,9 +48,19 @@ button {
   border: none;
 }
 
+.bold-text {
+  font-weight: 700;
+}
+
 #root, .App {
   display: flex;
   width: 100%;
+}
+
+.Sacramento {
+  font-family: "Sacramento";
+  font-size: 60px;
+  line-height: 52px;
 }
 
 .modal-backdrop {
@@ -46,13 +70,14 @@ button {
   left: 0;
   right: 0;
   background: #2e2e2ef0;
-  padding: 50px;
+  padding: 40px;
 }
+
 .modal {
   background: #fff;
   border-radius: 5px;
   max-width: 80%;
-  min-height: 90%;
+  min-height: 70%;
   margin: 0 auto;
   padding: 30px;
 }
@@ -74,10 +99,10 @@ button {
 
 .questionContainer {
   box-sizing: border-box;
-  border-radius: 20px;
+  border-radius: 5px;
   width: 90%;
   /*height: 90%;*/
-  padding: 0 20px 0 20px;
+  padding: 0 20px 10px 20px;
   background: #ffffff;
   box-shadow: 2px 2px 8px 1px rgba(0,0,0,0.13);
   display: flex;
@@ -89,20 +114,21 @@ button {
 
 .page-container {
   box-sizing: border-box;
-  border-radius: 20px;
+  border-radius: 5px;
   width: 90%;
-  height: 65%;
+  /*height: 65%;*/
   padding: 20px 20px 0 20px;
   background: #ffffff;
   box-shadow: 2px 2px 8px 1px rgba(0,0,0,0.13);
-  margin-top: 40px;
+  margin-top: 20px;
   margin-left: auto;
   margin-right: auto;
   display: flex;
   flex-wrap: wrap;
-  flex-direction: column;
-  /*justify-content: center;*/
+  flex-direction: row;
+  justify-content: center;
   align-items: center;
+  text-align: center;
 }
 
 .winning-container {
@@ -131,10 +157,6 @@ button {
   align-items: center;
 }
 
-/*.invisible {
-  display: none;
-}*/
-
 .navigation {
   position: absolute;
   display: flex;
@@ -160,7 +182,7 @@ button {
   letter-spacing: 0.2px;
   background: #dd2a30;
   border: 1px solid #dd2a30;
-  margin-top: 40px;
+  margin-top: 20px;
   cursor: pointer;
   color: #fff;
 }
@@ -196,6 +218,14 @@ button {
   font-size: 30px !important;
   padding-bottom: 2px;
   color: #dd2a30;
+}
+
+.fa-times-circle {
+  position: fixed;
+  right: 50px;
+  top: 50px;
+  color: #000;
+  font-size: 20px !important;
 }
 
 .round-btn {
