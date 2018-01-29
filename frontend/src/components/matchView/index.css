@@ -24,7 +24,7 @@
 @keyframes swoop {
     0% {margin-left: -1000px;}
     50% {margin-left: 100px;}
-    75% {margin-left: 50px;}
+    75% {margin-left: 10px;}
     100% {margin-left: 100px;}
 }
 
@@ -34,9 +34,6 @@
   color: white;
 }
 
-h3 {
-  font-size: 20px;
-}
 
 .container {
   display: none;

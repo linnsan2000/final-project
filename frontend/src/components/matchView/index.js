@@ -51,7 +51,7 @@ export default class MatchView extends React.Component {
           // show={this.state.mounted}
           alt="" />
         <div className="winning-container">
-          <h3>Testet visar att tycker likadant som {this.props.winningParty} i flera frågor</h3>
+          <h2>Testet visar att tycker likadant som {this.props.winningParty} i flera frågor</h2>
         </div>
       </div>
     )
