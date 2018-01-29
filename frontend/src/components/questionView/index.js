@@ -1,4 +1,5 @@
 import React from "react"
+// import ReactSwipe from "react-swipe"
 import "index.css"
 import QuestionItem from "./../question-item"
 

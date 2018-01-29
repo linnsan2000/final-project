@@ -1,4 +1,5 @@
 import React from "react"
+import ReactSwipe from "react-swipe"
 import { Link } from "react-router-dom"
 import "index.css"
 import LastPage from ".././lastPage"
@@ -131,25 +132,29 @@ export default class QuestionItem extends React.Component {
       )
     } else {
       return (
-        <div className="questionContainer">
-          {this.state.questions.length > 0
-            ?
-            <div className="content">
-              <h1>{this.state.questions[this.state.currentQuestionIndex].question}
-              </h1>
-              <button className="info-btn">
-                <Link to="/read-more" className="info-text">
-                  <i className="fa fa-info-circle" aria-hidden="true" />
-                  <p className="info-text">Läs mer om den här frågan</p>
-                </Link>
-              </button>
+        <div>
+          <ReactSwipe className="carousel" key={this.state.questions[this.state.currentQuestionIndex].length} swipeOptions={{ continuous: true }} >
+            <div className="questionContainer">
+              {this.state.questions.length > 0
+                ?
+                <div className="content">
+                  <h1>{this.state.questions[this.state.currentQuestionIndex].question}
+                  </h1>
+                  <button className="info-btn">
+                    <Link to="/read-more" className="info-text">
+                      <i className="fa fa-info-circle" aria-hidden="true" />
+                      <p className="info-text">Läs mer om den här frågan</p>
+                    </Link>
+                  </button>
+                </div>
+                :
+                <div>
+                  <h1>Loading questions...
+                  </h1>
+                </div>
+              }
             </div>
-            :
-            <div>
-              <h1>Loading questions...
-              </h1>
-            </div>
-          }
+          </ReactSwipe>
           <div>
             <Navigation
               handleNoAnswer={this.handleNoAnswer}
