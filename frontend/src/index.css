@@ -17,6 +17,7 @@ h1 {
   font-size: 20px;
   line-height: 24px;
   font-family: 'Open Sans', sans-serif;
+  margin: 40px 0 0 0;
 }
 
 h2 {
@@ -63,6 +64,10 @@ button {
   line-height: 52px;
 }
 
+.white {
+  color: #fff;
+}
+
 .modal-backdrop {
   position: fixed;
   top: 0;
@@ -92,7 +97,7 @@ button {
   height: 100%;
   margin-left: auto;
   margin-right: auto;
-  padding: 0px 20px 0 20px;
+  /*padding: 0px 20px 0 20px;*/
   text-align: center;
   box-sizing: border-box;
 }
@@ -135,18 +140,17 @@ button {
   box-sizing: border-box;
   border-radius: 20px;
   width: 90%;
-  height: 65%;
-  padding: 20px 20px 0 20px;
+  /*height: 65%;*/
+  padding: 20px;
   background: #ffffff;
   box-shadow: 2px 2px 8px 1px rgba(0,0,0,0.13);
-  margin-top: 40px;
   margin-left: auto;
   margin-right: auto;
   display: flex;
   flex-wrap: wrap;
-  flex-direction: column;
+  flex-direction: row;
   /*justify-content: center;*/
-  align-items: center;
+  /*align-items: center;*/
 }
 
 .content {
@@ -155,6 +159,10 @@ button {
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
+}
+
+.noflex-container {
+  display: block;
 }
 
 .navigation {

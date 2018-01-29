@@ -25,11 +25,11 @@ export default class MatchView extends React.Component {
 
   render() {
     return (
-      <div className="blur">
-        <h1 id="match-style">Du har en matchning!</h1>
+      <div className="noflex-container">
+        <h1 className="Sacramento white">Du har en matchning!</h1>
         <img className="matchImg" src={images[this.props.winningParty]} alt="" />
         <div className="winning-container">
-          <h3>Testet visar att tycker likadant som {this.props.winningParty} i flera frågor</h3>
+          <h4>Testet visar att tycker likadant som {this.props.winningParty} i flera frågor</h4>
         </div>
       </div>
     )
