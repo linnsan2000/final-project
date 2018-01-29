@@ -6,7 +6,7 @@ export default class QuestionView extends React.Component {
 
   render() {
     return (
-      <div className="Container">
+      <div className="container">
         <QuestionItem />
       </div>
     )

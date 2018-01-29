@@ -21,7 +21,7 @@ export default class Navigation extends React.Component {
           value="yes"
           onClick={this.props.handleSuperlike}
           disabled={this.props.isButtonDisabled}>
-          <i className="fa fa-star" aria-hidden="true" disabled="onClick" />
+          <i className="fa fa-star" aria-hidden="true" />
         </button>
         <button
           className="round-btn"
