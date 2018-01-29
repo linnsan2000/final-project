@@ -1,6 +1,6 @@
 import React from "react"
 import ReactSwipe from "react-swipe"
-import { Link } from "react-router-dom"
+// import { Link } from "react-router-dom"
 import "index.css"
 import LastPage from ".././lastPage"
 import MatchView from ".././matchView"
@@ -130,14 +130,6 @@ export default class QuestionItem extends React.Component {
         <div>
           <MatchView
             winningParty={this.state.winningParty} />
-          {/* <div className="image">
-            {
-              images.map(matchImg => (<MatchView
-                key={matchImg}
-                matchImg={matchImg}
-                setImg={this.handleMatchImage} />
-              ))}
-          </div> */}
         </div>
       )
     } else {
@@ -150,12 +142,6 @@ export default class QuestionItem extends React.Component {
                 <div className="content">
                   <h1>{this.state.questions[this.state.currentQuestionIndex].question}
                   </h1>
-                  <button className="info-btn">
-                    <Link to="/read-more" className="info-text">
-                      <i className="fa fa-info-circle" aria-hidden="true" />
-                      <p className="info-text">Läs mer om den här frågan</p>
-                    </Link>
-                  </button>
                 </div>
                 :
                 <div>
