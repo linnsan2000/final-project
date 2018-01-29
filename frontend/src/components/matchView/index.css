@@ -16,6 +16,7 @@
 .matchImg {
   border-radius: 50%;
   width: 65%;
+  border: solid 5px black;
 }
 
 #match-style {
