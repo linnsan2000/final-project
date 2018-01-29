@@ -134,23 +134,24 @@ export default class QuestionItem extends React.Component {
       )
     } else {
       return (
-        <div>
-          <ReactSwipe className="carousel" key={this.state.questions[this.state.currentQuestionIndex].length} swipeOptions={{ continuous: true }} >
-            <div className="questionContainer">
-              {this.state.questions.length > 0
-                ?
-                <div className="content">
-                  <h1>{this.state.questions[this.state.currentQuestionIndex].question}
-                  </h1>
-                </div>
-                :
-                <div>
-                  <h1>Loading questions...
-                  </h1>
-                </div>
-              }
+        // <div>
+      /* <ReactSwipe className="carousel" key={this.state.questions
+          [this.state.currentQuestionIndex].length} swipeOptions={{ continuous: true }} > */
+        <div className="questionContainer">
+          {this.state.questions.length > 0
+            ?
+            <div className="content">
+              <h1>{this.state.questions[this.state.currentQuestionIndex].question}
+              </h1>
             </div>
-          </ReactSwipe>
+            :
+            <div>
+              <h1>Loading questions...
+              </h1>
+            </div>
+          }
+          {/* </div> */}
+          {/* </ReactSwipe> */}
           <div>
             <Navigation
               handleNoAnswer={this.handleNoAnswer}

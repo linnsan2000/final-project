@@ -39,6 +39,24 @@ button {
   width: 100%;
 }
 
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #2e2e2ef0;
+  padding: 50px;
+}
+.modal {
+  background: #fff;
+  border-radius: 5px;
+  max-width: 80%;
+  min-height: 90%;
+  margin: 0 auto;
+  padding: 30px;
+}
+
 .container {
   display: flex;
   flex-wrap: wrap;

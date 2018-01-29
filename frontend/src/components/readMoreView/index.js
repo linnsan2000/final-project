@@ -9,14 +9,15 @@ export default class ReadMoreView extends React.Component {
       return null
     }
     return (
-      <div className="page-container">
-        {this.props.children}
-        <p>Här ska det stå en text om frågan man har tryckt på för att få läsa på mer.</p>
-        <button
-          className="btn"
-          onClick={this.props.onClose}>
+      <div className="modal-backdrop">
+        <div className="modal">
+          <p>Här ska det stå en text om frågan man har tryckt på för att få läsa på mer.</p>
+          <button
+            className="btn"
+            onClick={this.props.onClose}>
           TILLBAKA TILL TESTET
-        </button>
+          </button>
+        </div>
       </div>
     )
   }
