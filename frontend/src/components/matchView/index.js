@@ -27,8 +27,6 @@ export default class MatchView extends React.Component {
     return (
       <div className="winning-container">
         <h3>Du har mest gemensamt med {this.props.winningParty}</h3>
-        {/* // show matching image */}
-        {/* <img className="matchingImage" src={this.images} alt="" /> */}
         <img className="matchImg" src={images[this.props.winningParty]} alt="" />
       </div>
     )
