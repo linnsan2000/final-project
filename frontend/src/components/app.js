@@ -3,6 +3,8 @@ import { BrowserRouter, Route } from "react-router-dom"
 
 import QuestionView from "./questionView"
 import StartView from "./startView"
+import AllPartiesView from "./allPartiesView"
+
 // import ReadMoreView from "./readMoreView"
 // import MatchView from "./matchView"
 
@@ -14,7 +16,7 @@ export default class App extends React.Component {
         <div className="App">
           <Route exact path="/" component={StartView} />
           <Route path="/questions" component={QuestionView} />
-          {/* <Route path="/read-more" component={ReadMoreView} /> */}
+          <Route path="/all-parties" component={AllPartiesView} />
           {/* <Route path="/match" component={MatchView} /> */}
         </div>
       </BrowserRouter>
