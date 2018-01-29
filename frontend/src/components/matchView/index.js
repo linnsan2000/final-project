@@ -46,7 +46,7 @@ export default class MatchView extends React.Component {
         <h1 className="Sacramento white">Du har en matchning!</h1>
         <img className="matchImg" src={images[this.props.winningParty]} alt="" />
         <div className="winning-container">
-          <h4>Testet visar att tycker likadant som {this.props.winningParty} i flera frågor</h4>
+          <h4>Testet visar att du tycker likadant som<span className="bold-text"> {this.props.winningParty} </span>i flera frågor</h4>
         </div>
       </div>
     )

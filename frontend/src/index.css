@@ -17,7 +17,7 @@ h1 {
   font-size: 20px;
   line-height: 24px;
   font-family: 'Open Sans', sans-serif;
-  margin: 40px 0 0 0;
+  margin: 0;
 }
 
 h2 {
@@ -31,7 +31,7 @@ h4 {
   font-size: 14px;
   line-height: 18px;
   font-family: 'Open Sans', sans-serif;
-  font-weight: 700;
+  font-weight: 400;
   margin: 0;
 }
 
@@ -66,6 +66,7 @@ button {
 
 .white {
   color: #fff;
+  margin-top: 20px;
 }
 
 .modal-backdrop {
@@ -122,28 +123,30 @@ button {
   border-radius: 5px;
   width: 90%;
   /*height: 65%;*/
-  padding: 20px 20px 0 20px;
+  padding: 40px 20px 0 20px;
   background: #ffffff;
   box-shadow: 2px 2px 8px 1px rgba(0,0,0,0.13);
   margin-top: 20px;
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: 20px;
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
   justify-content: center;
-  align-items: center;
+  /*align-items: center;*/
   text-align: center;
 }
 
 .winning-container {
   box-sizing: border-box;
-  border-radius: 20px;
+  border-radius: 5px;
   width: 90%;
   /*height: 65%;*/
   padding: 20px;
   background: #ffffff;
   box-shadow: 2px 2px 8px 1px rgba(0,0,0,0.13);
+  margin-top: 10px;
   margin-left: auto;
   margin-right: auto;
   display: flex;
@@ -262,72 +265,20 @@ p.info-text {
   color: #000;
 }
 
-/*.yes-btn {
-  display: inline-block;
-  border-radius: 50%;
-  background: #F7F7FA;
-  border: 0.7px solid rgba(127, 127, 127, 0.4);
-  font-family: "Arial", sans-serif;
-  font-size: 12px;
-  font-weight: bold;
-  letter-spacing: 0.2px;
-  cursor: pointer;
-  height: 40px;
-  width: 40px;
+@media (min-width: 425px) and (max-width: 780px) {
+  .fa-times-circle {
+    right: 90px;
+  }
 }
 
-.no-btn {
-  display: inline-block;
-  border-radius: 50%;
-  background: #F7F7FA;
-  border: 0.7px solid rgba(127, 127, 127, 0.4);
-  font-family: "Arial", sans-serif;
-  font-size: 12px;
-  font-weight: bold;
-  letter-spacing: 0.2px;
-  cursor: pointer;
-  height: 40px;
-  width: 40px;
+@media (min-width: 781px) and (max-width: 970px) {
+  .fa-times-circle {
+    right: 110px;
+  }
 }
 
-.no-btn:active {
-  background: #222222;
-  border: none;
-  color: #fff;
+@media (min-width: 971px) {
+  .fa-times-circle {
+    right: 140px;
+  }
 }
-
-.yes-btn:active {
-  background: #222222;
-  border: none;
-  color: #fff;
-}*/
-
-/*.superlike-btn {
-  position: relative;
-  width: 50px;
-  height: 45px;
-}
-.superlike-btn:before,
-.superlike-btn:after {
-  cursor: pointer;
-  position: absolute;
-  content: "";
-  left: 25px;
-  top: 0;
-  width: 25px;
-  height: 40px;
-  background: #dd2a30;
-  border-radius: 25px 25px 0 0;
-  transform: rotate(-45deg);
-  transform-origin: 0 100%;
-}
-.superlike-btn:after {
-  left: 0;
-  transform: rotate(45deg);
-  transform-origin :100% 100%;
-}
-
-.superlike-btn:disabled:before,
-.superlike-btn:disabled:after {
-  background: #f7f7fa;
-}*/

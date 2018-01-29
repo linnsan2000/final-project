@@ -149,8 +149,8 @@ export default class QuestionItem extends React.Component {
           {this.state.questions.length > 0
             ?
             <div className="content">
-              <h1>{this.state.questions[this.state.currentQuestionIndex].question}
-              </h1>
+              <h2>{this.state.questions[this.state.currentQuestionIndex].question}
+              </h2>
               <button
                 className="info-btn"
                 onClick={this.toggleModal}>
