@@ -6,6 +6,18 @@ import LastPage from ".././lastPage"
 import MatchView from ".././matchView"
 import Navigation from ".././navigation"
 
+import Vänsterpartiet from "./../images/sjostedt.jpg"
+import Socialdemokraterna from "./../images/lofven.jpg"
+import Miljöpartiet from "./../images/lovinfridolin.jpg"
+import Moderaterna from "./../images/kristersson.jpg"
+import Liberalerna from "./../images/bjorklund.jpg"
+import Sverigedemokraterna from "./../images/akesson.jpg"
+import Kristdemokraterna from "./../images/buschthor.jpg"
+import Centerpartiet from "./../images/loof.jpg"
+
+const images = [Vänsterpartiet, Socialdemokraterna, Miljöpartiet, Moderaterna,
+  Liberalerna, Sverigedemokraterna, Kristdemokraterna, Centerpartiet]
+
 export default class QuestionItem extends React.Component {
   constructor(props) {
     const questions = JSON.parse(localStorage.getItem("savedData"))
@@ -95,7 +107,7 @@ export default class QuestionItem extends React.Component {
     })
   }
 
-  handleSuperlike= () => {
+  handleSuperlike = () => {
     const choosenParty = this.state.questions[this.state.currentQuestionIndex].party
     const newCounter = [...this.state.partyCounter, {
       _id: this.state.currentQuestionIndex,
@@ -120,6 +132,11 @@ export default class QuestionItem extends React.Component {
     })
   }
 
+  // handleMatchImage = images => {
+  //   if (this.state.winningParty === this.state.images)
+  //
+  // }
+
   render() {
     if (this.state.currentQuestionIndex === this.state.questions.length) {
       return (
@@ -127,8 +144,17 @@ export default class QuestionItem extends React.Component {
       )
     } else if (this.state.winningParty !== null) {
       return (
-        <MatchView
-          winningParty={this.state.winningParty} />
+        <div>
+          <MatchView
+            winningParty={this.state.winningParty} />
+          <div className="image">
+            {
+              images.map(matchImg => (<MatchView
+                matchImg={matchImg}
+                setImg={this.handleMatchImage} />
+              ))}
+          </div>
+        </div>
       )
     } else {
       return (
