@@ -13,8 +13,8 @@
 
 .matchImg {
   border-radius: 50%;
-  width: 65%;
-  margin-top: 10px;
+  width: 40%;
+  /*margin-top: 10px;*/
   border: solid 5px black;
   animation-name: swoop;
   animation-duration: 0.5s;
@@ -28,13 +28,6 @@
     75% {margin-left: 10px;}
     100% {margin-left: 100px;}
 }
-
-#match-style {
-  font-size: 60px;
-  font-family: "Sacramento";
-  color: white;
-}
-
 
 .container {
   display: none;

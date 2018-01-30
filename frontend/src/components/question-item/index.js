@@ -1,6 +1,5 @@
 import React from "react"
 // import { Link } from "react-router-dom"
-import { BarChart } from "recharts"
 import "index.css"
 import ReadMoreView from "./../readMoreView"
 import LastPage from ".././lastPage"
@@ -150,10 +149,7 @@ export default class QuestionItem extends React.Component {
       )
     } else {
       return (
-        // <div>
-      /* <ReactSwipe className="carousel" key={this.state.questions
-          [this.state.currentQuestionIndex].length} swipeOptions={{ continuous: true }} > */
-        <div className="questionContainer">
+        <div className="questionContainer extramargin">
           {this.state.questions.length > 0
             ?
             <div className="content">
@@ -178,8 +174,6 @@ export default class QuestionItem extends React.Component {
               </h1>
             </div>
           }
-          {/* </div> */}
-          {/* </ReactSwipe> */}
           <div>
             <ReadMoreView
               show={this.state.isOpen}

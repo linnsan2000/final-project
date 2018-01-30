@@ -1,9 +1,8 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700');
 
-@import url('https://fonts.googleapis.com/css?family=Sacramento');
+@import url('https://fonts.googleapis.com/css?family=Satisfy');
 
 body, html {
-  display: flex;
   margin: 0;
   padding: 0;
   background: #f7f7f7;
@@ -17,7 +16,8 @@ h1 {
   font-size: 20px;
   line-height: 24px;
   font-family: 'Open Sans', sans-serif;
-  margin: 0;
+  margin: 0 0 12px 0;
+  color: #1F181D;
 }
 
 h2 {
@@ -32,7 +32,7 @@ h4 {
   line-height: 18px;
   font-family: 'Open Sans', sans-serif;
   font-weight: 400;
-  margin: 0;
+  margin: 10px 0 20px 0;
 }
 
 a {
@@ -53,20 +53,59 @@ button {
   font-weight: 700;
 }
 
-#root, .App {
+#root {
+  display: block;
+}
+
+.App {
+  margin: 0;
   display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   width: 100%;
 }
 
-.Sacramento {
-  font-family: "Sacramento";
-  font-size: 60px;
+.Satisfy {
+  font-family: 'Satisfy', cursive;
+  font-size: 40px;
   line-height: 52px;
 }
 
 .white {
   color: #fff;
   margin-top: 20px;
+}
+
+.bold-white {
+  color: #fff;
+  font-weight: 700;
+  margin-bottom: 0;
+  margin-top: 20px;
+}
+
+h5.logo {
+  font-family: 'Satisfy', cursive;
+  font-size: 40px;
+  margin: 0;
+  color: #dd2a30;
+}
+
+.logo-image {
+  width: 42px;
+  height: 42px;
+  margin-right: 20px;
+}
+
+.header-container {
+  margin: 0;
+  width: 100%;
+  height: 60px;
+  background-color: #271d24;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .modal-backdrop {
@@ -103,6 +142,11 @@ button {
   box-sizing: border-box;
 }
 
+.extramargin {
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
 .questionContainer {
   box-sizing: border-box;
   border-radius: 5px;
@@ -123,7 +167,7 @@ button {
   border-radius: 5px;
   width: 90%;
   /*height: 65%;*/
-  padding: 40px 20px 0 20px;
+  padding: 40px 20px 20px 20px;
   background: #ffffff;
   box-shadow: 2px 2px 8px 1px rgba(0,0,0,0.13);
   margin-top: 20px;
@@ -132,7 +176,7 @@ button {
   margin-bottom: 20px;
   display: flex;
   flex-wrap: wrap;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   /*align-items: center;*/
   text-align: center;
@@ -141,9 +185,9 @@ button {
 .winning-container {
   box-sizing: border-box;
   border-radius: 5px;
-  width: 90%;
+  width: 70%;
   /*height: 65%;*/
-  padding: 20px;
+  padding: 5px 20px 20px 20px;
   background: #ffffff;
   box-shadow: 2px 2px 8px 1px rgba(0,0,0,0.13);
   margin-top: 10px;
