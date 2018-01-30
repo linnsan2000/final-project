@@ -13,8 +13,8 @@
 
 .matchImg {
   border-radius: 50%;
-  width: 65%;
-  margin-top: 10px;
+  width: 40%;
+  /*margin-top: 10px;*/
   border: solid 5px black;
   animation-name: swoop;
   animation-duration: 0.5s;

@@ -1,16 +1,16 @@
 import React from "react"
-import "index.css"
 import { Link } from "react-router-dom"
+// import "index.css"
 
 export default class StartView extends React.Component {
 
   render() {
     return (
       <div className="page-container">
-        <h1><span className="Sacramento">Matcha med rätt parti</span></h1>
+        <h1><span className="Satisfy">Matcha med rätt parti</span></h1>
         <h4>
           <span className="bold-text">Har du svårt att välja vilket parti som ska få din röst?
-        Gör vår valkompass! Lite som Tinder, fast med politiker. Typ.
+          Gör vår valkompass! Lite som Tinder, fast med politiker. Typ.
           </span>
         </h4>
         <p><span className="bold-text">Så här gör man:</span><br />

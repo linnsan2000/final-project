@@ -3,6 +3,7 @@ import { BrowserRouter, Route } from "react-router-dom"
 
 import QuestionView from "./questionView"
 import StartView from "./startView"
+import Header from "./header"
 import AllPartiesView from "./allPartiesView"
 import StatusView from "./statusView"
 
@@ -15,6 +16,7 @@ export default class App extends React.Component {
     return (
       <BrowserRouter>
         <div className="App">
+          <Header />
           <Route exact path="/" component={StartView} />
           <Route path="/questions" component={QuestionView} />
           <Route path="/all-parties" component={AllPartiesView} />

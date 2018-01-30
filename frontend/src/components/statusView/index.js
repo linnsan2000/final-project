@@ -10,7 +10,7 @@ export default class StatusView extends React.Component {
     return (
       <div className="modal-backdrop">
         <div className="modal">
-          <p>{this.props.partyCounter}</p>
+          <p>{this.props.status}</p>
           <button
             onClick={this.props.onClose}><i className="fa fa-times-circle" aria-hidden="true" />
           </button>

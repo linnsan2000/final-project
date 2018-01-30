@@ -1,5 +1,5 @@
 import React from "react"
-import { Link } from "react-router-dom"
+// import { Link } from "react-router-dom"
 import "index.css"
 import ReadMoreView from "./../readMoreView"
 import LastPage from ".././lastPage"
@@ -149,7 +149,7 @@ export default class QuestionItem extends React.Component {
       )
     } else {
       return (
-        <div className="questionContainer">
+        <div className="questionContainer extramargin">
           {this.state.questions.length > 0
             ?
             <div className="content">
@@ -181,7 +181,7 @@ export default class QuestionItem extends React.Component {
             <StatusView
               show={this.state.statusIsOpen}
               onClose={this.toggleStatus}
-              status={this.state.partyCounter} />
+              status={this.state.parties} />
             <Navigation
               handleNoAnswer={this.handleNoAnswer}
               handleYesAnswer={this.handleYesAnswer}
