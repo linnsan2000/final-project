@@ -1,6 +1,5 @@
 import React from "react"
-// import ReactSwipe from "react-swipe"
-// import { Link } from "react-router-dom"
+import { Link } from "react-router-dom"
 import "index.css"
 import ReadMoreView from "./../readMoreView"
 import LastPage from ".././lastPage"
@@ -142,9 +141,6 @@ export default class QuestionItem extends React.Component {
       )
     } else {
       return (
-        // <div>
-      /* <ReactSwipe className="carousel" key={this.state.questions
-          [this.state.currentQuestionIndex].length} swipeOptions={{ continuous: true }} > */
         <div className="questionContainer">
           {this.state.questions.length > 0
             ?
@@ -164,8 +160,6 @@ export default class QuestionItem extends React.Component {
               </h1>
             </div>
           }
-          {/* </div> */}
-          {/* </ReactSwipe> */}
           <div>
             <ReadMoreView
               show={this.state.isOpen}

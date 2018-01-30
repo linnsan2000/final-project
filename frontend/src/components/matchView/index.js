@@ -33,9 +33,17 @@ export default class MatchView extends React.Component {
         <div className="winning-container">
           <h4>Testet visar att du tycker likadant som<span className="bold-text"> {this.props.winningParty} </span>i flera frågor</h4>
           <Link to="/all-parties">
-            <h4>Läs mer om de andra sju riksdagspartierna här</h4>
+            <button className="info-btn">
+              <i className="fa fa-info-circle" aria-hidden="true" />
+            &nbsp; Läs mer om de andra riksdagspartierna
+            </button>
           </Link>
         </div>
+        <br />
+        <p><span className="bold-white">Gillar du inte din matchning? </span></p>
+        <Link to="/">
+          <button className="btn">GÖR TESTET IGEN</button>
+        </Link>
       </div>
     )
   }
