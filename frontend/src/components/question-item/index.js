@@ -5,6 +5,7 @@ import ReadMoreView from "./../readMoreView"
 import LastPage from ".././lastPage"
 import MatchView from ".././matchView"
 import Navigation from ".././navigation"
+import StatusView from ".././statusView"
 
 export default class QuestionItem extends React.Component {
   constructor(props) {
@@ -29,7 +30,8 @@ export default class QuestionItem extends React.Component {
       },
       winningParty: null,
       isButtonDisabled: false,
-      isOpen: false
+      isOpen: false,
+      statusIsOpen: false
     }
   }
 
@@ -127,6 +129,12 @@ export default class QuestionItem extends React.Component {
     })
   }
 
+  toggleStatus = () => {
+    this.setState({
+      statusIsOpen: !this.state.statusIsOpen
+    })
+  }
+
   render() {
     if (this.state.currentQuestionIndex === this.state.questions.length) {
       return (
@@ -153,6 +161,12 @@ export default class QuestionItem extends React.Component {
                 <i className="fa fa-info-circle" aria-hidden="true" />
                 &nbsp; Läs mer om den här frågan
               </button>
+              <button
+                className="status-btn"
+                onClick={this.toggleStatus}>
+                <i className="fa fa-info-circle" aria-hidden="true" />
+                &nbsp; Se ställningen just nu
+              </button>
             </div>
             :
             <div>
@@ -164,6 +178,10 @@ export default class QuestionItem extends React.Component {
             <ReadMoreView
               show={this.state.isOpen}
               onClose={this.toggleModal} />
+            <StatusView
+              show={this.state.statusIsOpen}
+              onClose={this.toggleStatus}
+              status={this.state.partyCounter} />
             <Navigation
               handleNoAnswer={this.handleNoAnswer}
               handleYesAnswer={this.handleYesAnswer}
