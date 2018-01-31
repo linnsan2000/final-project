@@ -160,18 +160,18 @@ export default class QuestionItem extends React.Component {
     } else {
       return (
         <Swipeable
-          className="swipe"
+          className="questionContainer extramargin"
           trackMouse
           style={{ touchAction: "none" }}
           preventDefaultTouchmoveEvent
           onSwipedLeft={() => this.onSwiped(LEFT)}
           onSwipedRight={() => this.onSwiped(RIGHT)} >
-          <div className="questionContainer extramargin">
+          <div>
             {this.state.questions.length > 0
               ?
               <div className="content">
-                <h2>{this.state.questions[this.state.currentQuestionIndex].question}</h2>
-                <h2 className="bold-text">{this.state.questions[this.state.currentQuestionIndex].question}
+                <h2 className="bold-text">
+                  {this.state.questions[this.state.currentQuestionIndex].question}
                 </h2>
                 <button
                   className="info-btn"
