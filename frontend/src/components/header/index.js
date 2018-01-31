@@ -1,4 +1,5 @@
 import React from "react"
+import "index.css"
 import logoImage from "./../images/logo.png"
 
 export default class Header extends React.Component {

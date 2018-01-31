@@ -32,7 +32,7 @@ export default class MatchView extends React.Component {
         <h1 className="Satisfy white">Du har en matchning!</h1>
         <img className="matchImg" src={images[this.props.winningParty]} alt="" />
         <div className="winning-container">
-          <h2>Testet visar att du tycker likadant som<span className="bold-text"> {this.props.winningParty} </span>i flera frågor</h2>
+          <h3>Testet visar att du tycker likadant som<span className="bold-text"> {this.props.winningParty} </span>i flera frågor</h3>
           <Link to="/all-parties">
             <button className="info-btn">
               <i className="fa fa-info-circle" aria-hidden="true" />
@@ -43,7 +43,7 @@ export default class MatchView extends React.Component {
         <br />
         <p><span className="bold-white">Gillar du inte din matchning? </span></p>
         <Link to="/">
-          <button className="btn extramargin">GÖR TESTET IGEN</button>
+          <button className="btn extramargin no-margin">GÖR TESTET IGEN</button>
         </Link>
         <Footer />
       </div>

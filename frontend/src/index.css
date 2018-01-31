@@ -16,7 +16,7 @@ h1 {
   font-size: 20px;
   line-height: 24px;
   font-family: 'Open Sans', sans-serif;
-  margin: 0 0 12px 0;
+  margin: 0 0 5px 0;
   color: #1F181D;
 }
 
@@ -25,6 +25,15 @@ h2 {
   line-height: 24px;
   font-family: 'Open Sans', sans-serif;
   font-weight: 400;
+  margin-bottom: 40px;
+}
+
+h3 {
+  font-size: 18px;
+  line-height: 24px;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+  margin-bottom: 5px;
 }
 
 h4 {
@@ -85,23 +94,27 @@ button {
   margin-top: 20px;
 }
 
+.no-margin {
+  margin-top: 0;
+}
+
 h5.logo {
   font-family: 'Satisfy', cursive;
-  font-size: 40px;
+  font-size: 10vw;
   margin: 0;
   color: #dd2a30;
 }
 
 .logo-image {
-  width: 42px;
-  height: 42px;
+  width: 10%;
+  height: 10%;
   margin-right: 20px;
 }
 
 .header-container {
   margin: 0;
   width: 100%;
-  height: 60px;
+  height: 8%;
   background-color: #271d24;
   display: flex;
   align-items: center;
@@ -242,6 +255,21 @@ h5.logo {
   color: #fff;
 }
 
+.status-btn {
+  border-radius: 46px;
+  padding: 10px 14px 10px 14px;
+  font-family: "Arial", sans-serif;
+  font-size: 10px;
+  line-height: 14px;
+  font-weight: bold;
+  letter-spacing: 0.2px;
+  background: #d9d5d8;
+  border: 1px solid #d9d5d8;
+  margin-top: 20px;
+  cursor: pointer;
+  color: #000;
+}
+
 .fa {
   font-size: 30px !important;
 }
@@ -309,20 +337,62 @@ p.info-text {
   color: #000;
 }
 
-@media (min-width: 425px) and (max-width: 780px) {
+@media screen and (max-width: 780px) and (min-width: 426px) {
   .fa-times-circle {
     right: 90px;
   }
-}
 
-@media (min-width: 781px) and (max-width: 970px) {
-  .fa-times-circle {
-    right: 110px;
+  h5.logo {
+    font-size: 5vw;
+  }
+
+  .logo-image {
+    width: 6%;
+    height: 6%;
+  }
+
+  .header-container {
+    width: 100%;
+    height: 3%;
   }
 }
 
-@media (min-width: 971px) {
+@media screen and (max-width: 970px) and (min-width: 781px) {
+  .fa-times-circle {
+    right: 110px;
+  }
+
+  h5.logo {
+    font-size: 5vw;
+  }
+
+  .logo-image {
+    width: 5%;
+    height: 5%;
+  }
+
+  .header-container {
+    width: 100%;
+    height: 8%;
+  }
+}
+
+@media screen and (min-width: 971px) {
   .fa-times-circle {
     right: 140px;
+  }
+
+  h5.logo {
+    font-size: 5vw;
+  }
+
+  .logo-image {
+    width: 5%;
+    height: 5%;
+  }
+
+  .header-container {
+    width: 100%;
+    height: 8%;
   }
 }
