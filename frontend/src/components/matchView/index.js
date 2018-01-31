@@ -1,5 +1,6 @@
 import React from "react"
 import { Link } from "react-router-dom"
+import Footer from "./../footer"
 import "./index.css"
 
 import Vänsterpartiet from "./../images/sjostedt.jpg"
@@ -44,6 +45,7 @@ export default class MatchView extends React.Component {
         <Link to="/">
           <button className="btn extramargin">GÖR TESTET IGEN</button>
         </Link>
+        <Footer />
       </div>
     )
   }
