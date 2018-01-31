@@ -7,9 +7,15 @@ body, html {
   padding: 0;
   background: #f7f7f7;
   font-size: 12px;
+  line-height: 18px;
   font-family: 'Open Sans', sans-serif;
   height: 100%;
   width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 h1 {
@@ -100,21 +106,26 @@ button {
 
 h5.logo {
   font-family: 'Satisfy', cursive;
-  font-size: 10vw;
+  font-size: 9vw;
   margin: 0;
   color: #dd2a30;
+  padding: 15px;
+  margin-top: 2px;
 }
 
 .logo-image {
-  width: 10%;
-  height: 10%;
-  margin-right: 20px;
+  width: 9%;
+  height: 9%;
+  /*margin-right: 20px;*/
 }
 
 .header-container {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
   margin: 0;
   width: 100%;
-  height: 8%;
   background-color: #271d24;
   display: flex;
   align-items: center;
@@ -175,12 +186,38 @@ h5.logo {
   align-items: center;
 }
 
+.questionContainerLeft {
+  box-sizing: border-box;
+  border-radius: 5px;
+  width: 90%;
+  /*height: 90%;*/
+  padding: 0 20px 10px 20px;
+  background: #ffffff;
+  box-shadow: 2px 2px 8px 1px rgba(0,0,0,0.13);
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  animation-name: swipeLeft;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
+  z-index: 1;
+}
+
+@keyframes swipeLeft {
+  0% {margin-left: 0;}
+  50% {margin-left: -10px;}
+  75% {margin-left: -100px;}
+  100% {margin-left: -1000px;}
+}
+
 .page-container {
   box-sizing: border-box;
   border-radius: 5px;
   width: 90%;
   /*height: 65%;*/
-  padding: 40px 20px 20px 20px;
+  padding: 20px;
   background: #ffffff;
   box-shadow: 2px 2px 8px 1px rgba(0,0,0,0.13);
   margin-top: 20px;
@@ -311,6 +348,10 @@ h5.logo {
   font-size: 20px !important;
 }
 
+.smallicon {
+  font-size: 14px !important;
+}
+
 .round-btn {
   width: 40px;
   height: 40px;
@@ -343,17 +384,17 @@ p.info-text {
   }
 
   h5.logo {
-    font-size: 5vw;
+    font-size: 4vw;
   }
 
   .logo-image {
-    width: 6%;
-    height: 6%;
+    width: 30px;
+    height: 30px
   }
 
   .header-container {
     width: 100%;
-    height: 3%;
+    height: 40px;
   }
 }
 
@@ -363,17 +404,17 @@ p.info-text {
   }
 
   h5.logo {
-    font-size: 5vw;
+    font-size: 4vw;
   }
 
   .logo-image {
-    width: 5%;
-    height: 5%;
+    width: 40px;
+    height: 40px;
   }
 
   .header-container {
     width: 100%;
-    height: 8%;
+    height: 60px;
   }
 }
 
@@ -383,16 +424,35 @@ p.info-text {
   }
 
   h5.logo {
-    font-size: 5vw;
+    font-size: 4vw;
   }
 
   .logo-image {
-    width: 5%;
-    height: 5%;
+    width: 40px;
+    height: 40px;
   }
 
   .header-container {
     width: 100%;
-    height: 8%;
+    height: 10%;
+  }
+  .page-container {
+    box-sizing: border-box;
+    border-radius: 5px;
+    width: 50%;
+    /*height: 65%;*/
+    padding: 20px;
+    background: #ffffff;
+    box-shadow: 2px 2px 8px 1px rgba(0,0,0,0.13);
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    /*align-items: center;*/
+    text-align: center;
   }
 }
