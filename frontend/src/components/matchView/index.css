@@ -15,7 +15,8 @@
   border-radius: 50%;
   width: 40%;
   /*margin-top: 10px;*/
-  border: solid 5px black;
+  border: solid 2px #d9d5d8;
+  box-shadow: 2px 2px 8px 1px rgba(0,0,0,0.13);
   animation-name: swoop;
   animation-duration: 0.5s;
   animation-iteration-count: 1;

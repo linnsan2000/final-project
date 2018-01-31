@@ -1,11 +1,13 @@
 import React from "react"
 import { Link } from "react-router-dom"
+import Footer from "./../footer"
 // import "index.css"
 
 export default class StartView extends React.Component {
 
   render() {
     return (
+      <div className="noflex-container">
       <div className="page-container">
         <h1><span className="Satisfy">Matcha med rätt parti</span></h1>
         <h4>
@@ -24,6 +26,8 @@ export default class StartView extends React.Component {
           </button>
         </Link>
       </div>
+      <Footer />
+    </div>
     )
   }
 }

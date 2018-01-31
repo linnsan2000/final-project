@@ -153,9 +153,14 @@ export default class QuestionItem extends React.Component {
           {this.state.questions.length > 0
             ?
             <div className="content">
+<<<<<<< HEAD
               <Swipeable>
                 <h2>{this.state.questions[this.state.currentQuestionIndex].question}</h2>
               </Swipeable>
+=======
+              <h2 className="bold-text">{this.state.questions[this.state.currentQuestionIndex].question}
+              </h2>
+>>>>>>> 187cd1bd3b503085e3e4963d84175487ef1a6973
               <button
                 className="info-btn"
                 onClick={this.toggleModal}>
@@ -165,8 +170,7 @@ export default class QuestionItem extends React.Component {
               <button
                 className="status-btn"
                 onClick={this.toggleStatus}>
-                <i className="fa fa-info-circle" aria-hidden="true" />
-                &nbsp; Se ställningen just nu
+                <p>STÄLLNINGEN JUST NU</p>
               </button>
             </div>
             :

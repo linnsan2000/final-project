@@ -1,0 +1,25 @@
+.navigation {
+  position: absolute;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  height: 60px;
+  background: #d9d5d8;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.round-btn {
+  width: 40px;
+  height: 40px;
+  background: #ffffff;
+  border-radius: 100%;
+  box-shadow: 2px 2px 8px 1px rgba(0,0,0,0.13);
+}
+
+.round-btn:disabled {
+  background: lightgrey;
+}
