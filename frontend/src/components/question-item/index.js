@@ -7,6 +7,9 @@ import MatchView from ".././matchView"
 import Navigation from ".././navigation"
 import StatusView from ".././statusView"
 
+const LEFT = "-1"
+const RIGHT = "1"
+
 export default class QuestionItem extends React.Component {
   constructor(props) {
     const questions = JSON.parse(localStorage.getItem("savedData"))
@@ -69,7 +72,6 @@ export default class QuestionItem extends React.Component {
   }
 
   handleNoAnswer = event => {
-    event.preventDefault()
     this.setState({
       currentQuestionIndex: this.state.currentQuestionIndex + 1
     })
@@ -118,8 +120,6 @@ export default class QuestionItem extends React.Component {
       parties,
       winningParty,
       isButtonDisabled: true
-    }, () => {
-
     })
   }
 
@@ -133,6 +133,17 @@ export default class QuestionItem extends React.Component {
     this.setState({
       statusIsOpen: !this.state.statusIsOpen
     })
+  }
+
+  onSwiped(direction) {
+    // const direction === RIGHT ? RIGHT : LEFT
+    console.log(direction)
+    if (direction === RIGHT) {
+      this.handleYesAnswer()
+    } else {
+      this.handleNoAnswer()
+    }
+    this.setState({ currentQuestionIndex: this.state.currentQuestionIndex + 1 })
   }
 
   render() {
@@ -149,48 +160,54 @@ export default class QuestionItem extends React.Component {
       )
     } else {
       return (
-        <div className="questionContainer extramargin">
-          {this.state.questions.length > 0
-            ?
-            <div className="content">
-              <Swipeable>
+        <Swipeable
+          className="swipe"
+          trackMouse
+          style={{ touchAction: "none" }}
+          preventDefaultTouchmoveEvent
+          onSwipedLeft={() =>this.onSwiped(LEFT)}
+          onSwipedRight={() =>this.onSwiped(RIGHT)} >
+          <div className="questionContainer extramargin">
+            {this.state.questions.length > 0
+              ?
+              <div className="content">
                 <h2>{this.state.questions[this.state.currentQuestionIndex].question}</h2>
-              </Swipeable>
-              <h2 className="bold-text">{this.state.questions[this.state.currentQuestionIndex].question}
-              </h2>
-              <button
-                className="info-btn"
-                onClick={this.toggleModal}>
-                <i className="fa fa-info-circle" aria-hidden="true" />
-                &nbsp; Läs mer om den här frågan
-              </button>
-              <button
-                className="status-btn"
-                onClick={this.toggleStatus}>
-                <p>STÄLLNINGEN JUST NU</p>
-              </button>
-            </div>
-            :
+                <h2 className="bold-text">{this.state.questions[this.state.currentQuestionIndex].question}
+                </h2>
+                <button
+                  className="info-btn"
+                  onClick={this.toggleModal}>
+                  <i className="fa fa-info-circle" aria-hidden="true" />
+                  &nbsp; Läs mer om den här frågan
+                </button>
+                <button
+                  className="status-btn"
+                  onClick={this.toggleStatus}>
+                  <p>STÄLLNINGEN JUST NU</p>
+                </button>
+              </div>
+              :
+              <div>
+                <h1>Loading questions...
+                </h1>
+              </div>
+            }
             <div>
-              <h1>Loading questions...
-              </h1>
+              <ReadMoreView
+                show={this.state.isOpen}
+                onClose={this.toggleModal} />
+              <StatusView
+                show={this.state.statusIsOpen}
+                onClose={this.toggleStatus}
+                status={this.state.parties} />
+              <Navigation
+                handleNoAnswer={this.handleNoAnswer}
+                handleYesAnswer={this.handleYesAnswer}
+                handleSuperlike={this.handleSuperlike}
+                isButtonDisabled={this.state.isButtonDisabled} />
             </div>
-          }
-          <div>
-            <ReadMoreView
-              show={this.state.isOpen}
-              onClose={this.toggleModal} />
-            <StatusView
-              show={this.state.statusIsOpen}
-              onClose={this.toggleStatus}
-              status={this.state.parties} />
-            <Navigation
-              handleNoAnswer={this.handleNoAnswer}
-              handleYesAnswer={this.handleYesAnswer}
-              handleSuperlike={this.handleSuperlike}
-              isButtonDisabled={this.state.isButtonDisabled} />
           </div>
-        </div>
+        </Swipeable>
       )
     }
   }
