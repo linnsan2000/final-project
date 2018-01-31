@@ -337,6 +337,47 @@ p.info-text {
   color: #000;
 }
 
+.swipe {
+  box-sizing: border-box;
+  border-radius: 5px;
+  width: 90%;
+  /*height: 90%;*/
+  padding: 0 20px 10px 20px;
+  background: #ffffff;
+  box-shadow: 2px 2px 8px 1px rgba(0,0,0,0.13);
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.swipe.LEFT {
+box-sizing: border-box;
+border-radius: 5px;
+width: 90%;
+/*height: 90%;*/
+padding: 0 20px 10px 20px;
+background: #ffffff;
+box-shadow: 2px 2px 8px 1px rgba(0,0,0,0.13);
+display: flex;
+flex-wrap: wrap;
+flex-direction: column;
+justify-content: flex-start;
+align-items: center;
+animation-name: swipeLeft;
+animation-duration: 1s;
+animation-iteration-count: 1;
+z-index: 1;
+}
+
+@keyframes swipeLeft {
+  0% {margin-left: 0;}
+  50% {margin-left: -10px;}
+  75% {margin-left: -100px;}
+  100% {margin-left: -1000px;}
+}
+
 @media screen and (max-width: 780px) and (min-width: 426px) {
   .fa-times-circle {
     right: 90px;

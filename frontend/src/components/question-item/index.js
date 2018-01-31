@@ -34,7 +34,8 @@ export default class QuestionItem extends React.Component {
       winningParty: null,
       isButtonDisabled: false,
       isOpen: false,
-      statusIsOpen: false
+      statusIsOpen: false,
+      cssClass: "swipe"
     }
   }
 
@@ -142,7 +143,10 @@ export default class QuestionItem extends React.Component {
     } else {
       this.handleNoAnswer()
     }
-    this.setState({ currentQuestionIndex: this.state.currentQuestionIndex + 1 })
+    this.setState({
+      currentQuestionIndex: this.state.currentQuestionIndex + 1,
+      cssClass: `${direction}`
+    })
   }
 
   render() {
@@ -160,7 +164,7 @@ export default class QuestionItem extends React.Component {
     } else {
       return (
         <Swipeable
-          className="questionContainer extramargin"
+          className={this.state.cssClass}
           trackMouse
           style={{ touchAction: "none" }}
           preventDefaultTouchmoveEvent
