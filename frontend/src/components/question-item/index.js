@@ -1,5 +1,5 @@
 import React from "react"
-// import { Link } from "react-router-dom"
+import Swipeable from "react-swipeable"
 import "index.css"
 import ReadMoreView from "./../readMoreView"
 import LastPage from ".././lastPage"
@@ -153,8 +153,9 @@ export default class QuestionItem extends React.Component {
           {this.state.questions.length > 0
             ?
             <div className="content">
-              <h2>{this.state.questions[this.state.currentQuestionIndex].question}
-              </h2>
+              <Swipeable>
+                <h2>{this.state.questions[this.state.currentQuestionIndex].question}</h2>
+              </Swipeable>
               <button
                 className="info-btn"
                 onClick={this.toggleModal}>

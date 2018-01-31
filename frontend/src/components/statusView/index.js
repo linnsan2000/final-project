@@ -1,5 +1,5 @@
 import React from "react"
-import { BarChart, YAxis, XAxis, Bar, Tooltip, Legend, CartesianGrid } from "recharts"
+import { BarChart, YAxis, XAxis, Bar, Tooltip } from "recharts"
 import "index.css"
 
 export default class StatusView extends React.Component {
@@ -29,13 +29,12 @@ export default class StatusView extends React.Component {
           <BarChart
             width={400}
             height={500}
-            data={this.dataForChart()} >
-            <XAxis type="category" dataKey="name" />
+            data={this.dataForChart()}
+            barGap={0} >
+            <XAxis interval={0} tick={{ fill: "red", fontSize: 10, angle: 30 }} type="category" dataKey="name" />
             <YAxis type="number" ticks={[0, 1, 2, 3]} />
             <Bar dataKey="score" fill="#82ca9d" />
-            <CartesianGrid strokeDasharray="3 3" />
             <Tooltip />
-            <Legend />
           </BarChart>
           <button
             onClick={this.props.onClose}><i className="fa fa-times-circle" aria-hidden="true" />
