@@ -6,7 +6,7 @@ export default class lastPage extends React.Component {
   render() {
     return (
       <div>
-        <h1>Oops</h1>
+        <h1>Oops! Det blev ingen match. Du kanske ska testa igen?</h1>
         <Link to="/">
           <button className="btn">GÖR TESTET IGEN</button>
         </Link>

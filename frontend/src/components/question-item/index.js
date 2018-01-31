@@ -203,11 +203,14 @@ export default class QuestionItem extends React.Component {
                 show={this.state.statusIsOpen}
                 onClose={this.toggleStatus}
                 status={this.state.parties} />
-              <Navigation
-                handleNoAnswer={this.handleNoAnswer}
-                handleYesAnswer={this.handleYesAnswer}
-                handleSuperlike={this.handleSuperlike}
-                isButtonDisabled={this.state.isButtonDisabled} />
+              {this.state.isOpen === false
+                ?
+                <Navigation
+                  handleNoAnswer={this.handleNoAnswer}
+                  handleYesAnswer={this.handleYesAnswer}
+                  handleSuperlike={this.handleSuperlike}
+                  isButtonDisabled={this.state.isButtonDisabled} />
+                : null}
             </div>
           </div>
         </Swipeable>

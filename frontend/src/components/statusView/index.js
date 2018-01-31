@@ -30,7 +30,8 @@ export default class StatusView extends React.Component {
             width={400}
             height={500}
             data={this.dataForChart()}
-            barGap={0} >
+            barGap={0}
+            className="barchart" >
             <XAxis interval={0} tick={{ fill: "red", fontSize: 10, angle: 30 }} type="category" dataKey="name" />
             <YAxis type="number" ticks={[0, 1, 2, 3]} />
             <Bar dataKey="score" fill="#82ca9d" />
