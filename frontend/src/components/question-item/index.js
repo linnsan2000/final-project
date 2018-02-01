@@ -39,23 +39,8 @@ export default class QuestionItem extends React.Component {
     }
   }
 
-  // componentDidMount = () => {
-  //   // this.setQuestions(this.questions)
-  //   setTimeout(function() { //Start the timer
-  //     this.setQuestions(this.questions)
-  //   }.bind(), 1000)
-  // }
-
-  //   componentDidMount() {
-  //   setTimeout = () => { //Start the timer
-  //     this.setQuestions(this.questions), 1000
-  //   }
-  // }
-
   componentDidMount() {
-    setTimeout(() => {
-      this.setQuestions(this.questions)
-    }, 1000)
+    this.setQuestions(this.questions)
   }
 
   setQuestions() {
