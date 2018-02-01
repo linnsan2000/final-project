@@ -70,4 +70,5 @@ app.post("/questions", (req, res) => {
     // felmeddelande till frontend när reglerna inte är uppfyllda
 })
 
-app.listen(8080, () => console.log("Compass API listening on port 8080!"))
+const port = process.env.PORT || 8080
+app.listen(port, () => console.log(`Server running on port ${port}`))
