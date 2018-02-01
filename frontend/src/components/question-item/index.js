@@ -7,8 +7,8 @@ import MatchView from ".././matchView"
 import Navigation from ".././navigation"
 import StatusView from ".././statusView"
 
-const LEFT = "-1"
-const RIGHT = "1"
+const LEFT = "LEFT"
+const RIGHT = "RIGHT"
 
 export default class QuestionItem extends React.Component {
   constructor(props) {
@@ -35,12 +35,27 @@ export default class QuestionItem extends React.Component {
       isButtonDisabled: false,
       isOpen: false,
       statusIsOpen: false,
-      cssClass: "swipe"
+      swipe: "swipe"
     }
   }
 
+  // componentDidMount = () => {
+  //   // this.setQuestions(this.questions)
+  //   setTimeout(function() { //Start the timer
+  //     this.setQuestions(this.questions)
+  //   }.bind(), 1000)
+  // }
+
+  //   componentDidMount() {
+  //   setTimeout = () => { //Start the timer
+  //     this.setQuestions(this.questions), 1000
+  //   }
+  // }
+
   componentDidMount() {
-    this.setQuestions(this.questions)
+    setTimeout(() => {
+      this.setQuestions(this.questions)
+    }, 1000)
   }
 
   setQuestions() {
@@ -145,7 +160,7 @@ export default class QuestionItem extends React.Component {
     }
     this.setState({
       currentQuestionIndex: this.state.currentQuestionIndex + 1,
-      cssClass: `${direction}`
+      swipe: `swipe-${direction}`
     })
   }
 
@@ -164,7 +179,7 @@ export default class QuestionItem extends React.Component {
     } else {
       return (
         <Swipeable
-          className={this.state.cssClass}
+          className={this.state.swipe}
           trackMouse
           style={{ touchAction: "none" }}
           preventDefaultTouchmoveEvent
