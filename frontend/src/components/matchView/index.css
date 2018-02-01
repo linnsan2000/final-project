@@ -30,6 +30,34 @@
     100% {margin-left: 100px;}
 }
 
-.container {
-  display: none;
+.white {
+  color: #fff;
+  margin-top: 15%;
+}
+
+@media screen and (max-width: 780px) and (min-width: 426px) {
+  .blur {
+    padding-bottom: 20px;
+  }
+}
+
+@media screen and (max-width: 970px) and (min-width: 781px) {
+  .blur {
+    padding-bottom: 20px;
+  }
+
+  .white {
+    margin-top: 25%;
+  }
+}
+
+@media screen and (min-width: 971px) {
+  .blur {
+    margin-top: 10%;
+    padding-bottom: 20px;
+  }
+
+  .white {
+    margin-top: 20%;
+  }
 }
