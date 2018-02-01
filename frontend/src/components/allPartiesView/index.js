@@ -16,7 +16,7 @@ export default class AllPartiesView extends React.Component {
     return (
       <div className="content">
         <div className="parties-container">
-          <h3>Här kan du läsa mer om vad alla sju riksdags-partierna tycker</h3>
+          <h3 className="margin-bottom">Här kan du läsa mer om vad alla sju riksdags-partierna tycker</h3>
           <h6><img src={Clogo} alt="C-logga"id="logo" />
             <a href="http://www.centerpartiet.se" id="partylink">Centerpartiet</a>
           </h6><br />
