@@ -164,12 +164,12 @@ h5.logo {
   margin-bottom: 40px;
 }
 
-.questionContainer {
+/* .swipe {
   box-sizing: border-box;
   border-radius: 5px;
-  width: 90%;
+  width: 90%; */
   /*height: 90%;*/
-  padding: 0 20px 10px 20px;
+  /* padding: 0 20px 10px 20px;
   background: #ffffff;
   box-shadow: 2px 2px 8px 1px rgba(0,0,0,0.13);
   display: flex;
@@ -177,9 +177,20 @@ h5.logo {
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
+  animation-name: swipedelay;
+  animation-delay: 3s;
+  animation-duration: 2s;
+  animation-iteration-count: 1;
+  z-index: 1;
+} */
+
+@keyframes swipedelay {
+  0% {margin-top: -100px;}
+  50% {margin-top: 10px;}
+  100% {margin-top: 50px;}
 }
 
-.questionContainerLeft {
+.swipe-LEFT {
   box-sizing: border-box;
   border-radius: 5px;
   width: 90%;
@@ -193,7 +204,26 @@ h5.logo {
   justify-content: flex-start;
   align-items: center;
   animation-name: swipeLeft;
-  animation-duration: 1s;
+  animation-duration: 0.5s;
+  animation-iteration-count: 1;
+  z-index: 1;
+}
+
+.swipe-RIGHT {
+  box-sizing: border-box;
+  border-radius: 5px;
+  width: 90%;
+  /*height: 90%;*/
+  padding: 0 20px 10px 20px;
+  background: #ffffff;
+  box-shadow: 2px 2px 8px 1px rgba(0,0,0,0.13);
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  animation-name: swipeRight;
+  animation-duration: 0.5s;
   animation-iteration-count: 1;
   z-index: 1;
 }
@@ -203,6 +233,13 @@ h5.logo {
   50% {margin-left: -10px;}
   75% {margin-left: -100px;}
   100% {margin-left: -1000px;}
+}
+
+@keyframes swipeRight {
+  0% {margin-right: 0;}
+  50% {margin-right: -10px;}
+  75% {margin-right: -100px;}
+  100% {margin-right: -1000px;}
 }
 
 .page-container {
