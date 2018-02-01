@@ -5,7 +5,7 @@ import ReadMoreView from "./../readMoreView"
 import LastPage from ".././lastPage"
 import MatchView from ".././matchView"
 import Navigation from ".././navigation"
-import StatusView from ".././statusView"
+// import StatusView from ".././statusView"
 
 const LEFT = "LEFT"
 const RIGHT = "RIGHT"
@@ -183,11 +183,11 @@ export default class QuestionItem extends React.Component {
                   <i className="fa fa-info-circle" aria-hidden="true" />
                   &nbsp; Läs mer om den här frågan
                 </button>
-                <button
+                {/* <button
                   className="status-btn"
                   onClick={this.toggleStatus}>
                   <p>STÄLLNINGEN JUST NU</p>
-                </button>
+                </button> */}
               </div>
               :
               <div>
@@ -199,10 +199,10 @@ export default class QuestionItem extends React.Component {
               <ReadMoreView
                 show={this.state.isOpen}
                 onClose={this.toggleModal} />
-              <StatusView
+              {/* <StatusView
                 show={this.state.statusIsOpen}
                 onClose={this.toggleStatus}
-                status={this.state.parties} />
+                status={this.state.parties} /> */}
               {this.state.isOpen === false
                 ?
                 <Navigation
