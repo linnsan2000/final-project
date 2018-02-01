@@ -44,7 +44,7 @@ export default class QuestionItem extends React.Component {
   }
 
   setQuestions() {
-    fetch("http://localhost:8080/questions/")
+    fetch("https://swipe-n-vote.herokuapp.com/questions")
       .then(response => (
         response.json()
       )).then(json => {
