@@ -411,18 +411,35 @@ h5.logo {
   background: #ffffff;
   border-radius: 100%;
   box-shadow: 2px 2px 8px 1px rgba(0,0,0,0.13);
-  /* position: relative; */
+  position: relative;
 }
 
-/* .round-btn .fa {
+.round-btn .fa-star {
+  display: block;
+  position: absolute;
+  top: calc(50% - 13px);
+  left: calc(50% - 12px);
+  margin: 0;
+  padding: 0;
+}
+
+.round-btn .fa-times {
+  display: block;
+  position: absolute;
+  top: calc(50% - 14px);
+  left: calc(50% - 10.5px);
+  margin: 0;
+  padding: 0;
+}
+
+.round-btn .fa-heart {
   display: block;
   position: absolute;
   top: calc(50% - 11px);
   left: calc(50% - 12px);
   margin: 0;
   padding: 0;
-} */
-
+}
 
 
 .round-btn:disabled {
