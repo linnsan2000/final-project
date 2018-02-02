@@ -5,10 +5,28 @@
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
-  height: 40px;
+  height: 30px;
   background: #d9d5d8;
   left: 0;
   right: 0;
   bottom: 0;
   text-align: center;
+}
+
+@media screen and (max-width: 780px) and (min-width: 426px) {
+  .footer {
+    height:40px;
+  }
+}
+
+@media screen and (max-width: 970px) and (min-width: 781px) {
+  .footer {
+    height: 60px;
+  }
+}
+
+@media screen and (min-width: 971px) {
+  .footer {
+    height: 60px;
+  }
 }
