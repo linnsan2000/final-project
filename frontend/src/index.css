@@ -385,25 +385,25 @@ h5.logo {
 }
 
 .fa-heart {
-  font-size: 26px !important;
+  font-size: 2.3em !important;
   padding-top: 4px;
   color: #059f5d;
 }
 
 .fa-star {
-  font-size: 28px !important;
+  font-size: 2.5em !important;
   padding-top: 1px;
   color: #0078BD;
 }
 
 .fa-star::before:disabled {
-  font-size: 28px !important;
+  font-size: 2em !important;
   padding-top: 1px;
   color: #f1efec;
 }
 
 .fa-times {
-  font-size: 30px !important;
+  font-size: 2.5em !important;
   padding-bottom: 2px;
   color: #dd2a30;
 }
@@ -426,7 +426,19 @@ h5.logo {
   background: #ffffff;
   border-radius: 100%;
   box-shadow: 2px 2px 8px 1px rgba(0,0,0,0.13);
+  /* position: relative; */
 }
+
+/* .round-btn .fa {
+  display: block;
+  position: absolute;
+  top: calc(50% - 11px);
+  left: calc(50% - 12px);
+  margin: 0;
+  padding: 0;
+} */
+
+
 
 .round-btn:disabled {
   background: lightgrey;
