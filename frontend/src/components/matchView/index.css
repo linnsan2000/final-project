@@ -50,14 +50,14 @@
 
 @media screen and (max-width: 780px) and (min-width: 426px) {
   .blur {
-    padding-bottom: 20px;
+    margin: 40px 0 40px 0;
     width: 100%;
   }
 }
 
 @media screen and (max-width: 970px) and (min-width: 781px) {
   .blur {
-    padding-bottom: 20px;
+    margin: 60px 0 40px 0;
   }
 
   .white {
@@ -67,11 +67,10 @@
 
 @media screen and (min-width: 971px) {
   .blur {
-    margin-top: 10%;
-    padding-bottom: 20px;
+    margin: 60px 0 40px 0;
   }
 
   .white {
-    margin-top: 10%;
+    margin-top: 13%;
   }
 }
