@@ -35,6 +35,7 @@ h3 {
   font-family: 'Open Sans', sans-serif;
   font-weight: 400;
   margin-bottom: 5px;
+  margin-top: 10px;
 }
 
 h4 {
@@ -209,9 +210,10 @@ h5.logo {
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  animation-name: swipeLeft;
+  /*animation-name: swipeLeft;*/
   animation-duration: 0.5s;
   animation-iteration-count: 1;
+  animation-timing-function: ease-in;
   z-index: 1;
 }
 
@@ -228,17 +230,18 @@ h5.logo {
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  animation-name: swipeRight;
+  /*animation-name: swipeRight;*/
   animation-duration: 0.5s;
   animation-iteration-count: 1;
+  animation-timing-function: ease-in;
   z-index: 1;
 }
 
 @keyframes swipeLeft {
   0% {margin-left: 0;}
-  50% {margin-left: -10px;}
-  75% {margin-left: -100px;}
-  100% {margin-left: -1000px;}
+  50% {margin-left: -40px;}
+  75% {margin-left: -500px;}
+  100% {margin-left: 0px;}
 }
 
 @keyframes swipeRight {
@@ -297,24 +300,6 @@ h5.logo {
 #partylink {
   color: black;
   cursor: pointer;
-}
-
-.winning-container {
-  box-sizing: border-box;
-  border-radius: 5px;
-  width: 70%;
-  /*height: 65%;*/
-  padding: 5px 20px 20px 20px;
-  background: #ffffff;
-  box-shadow: 2px 2px 8px 1px rgba(0,0,0,0.13);
-  margin-top: 10px;
-  margin-left: auto;
-  margin-right: auto;
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  /*justify-content: center;*/
-  /*align-items: center;*/
 }
 
 .content {
